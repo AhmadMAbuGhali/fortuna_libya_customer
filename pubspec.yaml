@@ -20,6 +20,8 @@ dependencies:
   flutter_svg:
   provider:
   shared_preferences:
+  dio:
+  string_validator:  
 
 dev_dependencies:
   flutter_test:
