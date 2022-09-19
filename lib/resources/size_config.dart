@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class SizeConfig {
@@ -10,7 +11,9 @@ class SizeConfig {
   void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
     screenWidth = _mediaQueryData.size.width;
-    print('$screenWidth');
+    if (kDebugMode) {
+      print('$screenWidth');
+    }
     screenHeight = _mediaQueryData.size.height;
     orientation = _mediaQueryData.orientation;
   }

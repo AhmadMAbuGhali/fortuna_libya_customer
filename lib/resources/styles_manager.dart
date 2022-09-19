@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'font_manager.dart';
 
 TextStyle _getTextStyle(double fontSize, FontWeight fontWeight, Color color) {
   return TextStyle(
-      fontSize: fontSize,
+      fontSize: fontSize.sp,
       fontFamily: FontConstants.fontFamily,
       color: color,
       fontWeight: fontWeight);
@@ -30,12 +31,6 @@ TextStyle getLightStyle(
     {double fontSize = FontSize.s12, required Color color}) {
   return _getTextStyle(fontSize, FontWeightManager.light, color);
 }
-// Extra Light style
-
-TextStyle getExtraLightStyle(
-    {double fontSize = FontSize.s12, required Color color}) {
-  return _getTextStyle(fontSize, FontWeightManager.extraLight, color);
-}
 
 // bold style
 
@@ -44,13 +39,3 @@ TextStyle getBoldStyle(
   return _getTextStyle(fontSize, FontWeightManager.bold, color);
 }
 
-//extra bold style
-TextStyle getExtraBoldStyle(
-    {double fontSize = FontSize.s12, required Color color}) {
-  return _getTextStyle(fontSize, FontWeightManager.extraBold, color);
-}
-// black style
-TextStyle getBlackStyle(
-    {double fontSize = FontSize.s22, required Color color}) {
-  return _getTextStyle(fontSize, FontWeightManager.black, color);
-}
