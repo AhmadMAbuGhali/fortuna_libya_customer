@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fortuna_libya_customer/navigator/router_class.dart';
 import 'package:fortuna_libya_customer/resources/theme_manager.dart';
+import 'package:fortuna_libya_customer/ui/screens/home_screens/home_screen.dart';
 
 void main() async{
   await ScreenUtil.ensureScreenSize();
@@ -20,6 +22,15 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
           return MaterialApp(
+            localizationsDelegates: [
+              GlobalCupertinoLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: [
+              Locale("ar", "PS"),
+            ],
+            locale: Locale("ar", "PS") ,
             scaffoldMessengerKey:RouterClass.routerClass.rootScaffoldMessengerKey ,
             debugShowCheckedModeBanner: false,
             navigatorKey: RouterClass.routerClass.navKey,
@@ -27,7 +38,7 @@ class MyApp extends StatelessWidget {
             home: child,
           );
        },
-        child:const SplashScreen()
+        child: HomeScreen()
     );
   }
 }

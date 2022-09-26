@@ -14,6 +14,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
   cupertino_icons: ^1.0.2
   flutter_screenutil:
@@ -21,10 +23,13 @@ dependencies:
   provider:
   shared_preferences:
   dio:
-  string_validator:  
+  string_validator:
+  buttons_tabbar:
+  image_picker:
 
 dev_dependencies:
   flutter_test:
+
     sdk: flutter
 
   flutter_lints: ^2.0.0
@@ -43,11 +48,11 @@ flutter:
   fonts:
    - family: Dubai
      fonts:
-       - asset: fonts/Dubai-Bold.ttf
+       - asset: assets/fonts/Dubai-Bold.ttf
          weight: 700
-       - asset: fonts/Dubai-Medium.ttf
+       - asset: assets/fonts/Dubai-Medium.ttf
          weight: 500
-       - asset: fonts/Dubai-Regular.ttf
+       - asset: assets/fonts/Dubai-Regular.ttf
          weight: 400
-       - asset: fonts/Dubai-Light.ttf
+       - asset: assets/fonts/Dubai-Light.ttf
          weight: 300

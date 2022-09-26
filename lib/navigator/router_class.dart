@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fortuna_libya_customer/ui/screens/home_screens/home_screen.dart';
+import 'package:fortuna_libya_customer/ui/screens/order/order_screen.dart';
+import 'package:fortuna_libya_customer/ui/screens/product/product_details.dart';
+import 'package:fortuna_libya_customer/ui/screens/profile/profile_screen.dart';
 
 class RouterClass {
   RouterClass._();
@@ -30,5 +34,9 @@ class RouterClass {
 
   Map<String, Widget Function(BuildContext)> map = {
       // 'NavHome': (context) => const MainNavBar(),
+       'Home': (context) =>  HomeScreen(),
+       'Profile': (context) =>  ProfileScreen(),
+       'ProductDetails': (context) =>  ProductDetails(),
+       'Order': (context) =>  OrderScreen(),
   };
 }
