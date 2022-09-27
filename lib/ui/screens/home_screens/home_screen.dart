@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fortuna_libya_customer/resources/assets_manager.dart';
 import 'package:fortuna_libya_customer/resources/styles_manager.dart';
+import 'package:fortuna_libya_customer/ui/screens/favourite/favourite_screen.dart';
+import 'package:fortuna_libya_customer/ui/screens/limit_offer/limited_offer.dart';
 import 'package:fortuna_libya_customer/ui/screens/order/order_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/product/product_details.dart';
 import 'package:fortuna_libya_customer/ui/screens/profile/profile_screen.dart';
@@ -379,45 +381,55 @@ class _HomeScreenState extends State<HomeScreen>
                         height: 12.h,
                       ),
                       //limit
-                      Row(
-                        children: [
-                          SvgPicture.asset(
-                            IconAssets.limit,
-                            color: ColorManager.black,
-                            height: 20.h,
-                            width: 20.w,
-                          ),
-                          SizedBox(
-                            width: 30.w,
-                          ),
-                          Text(
-                            "الكمية المحدودة",
-                            style: getBoldStyle(
-                                color: ColorManager.black, fontSize: 18),
-                          ),
-                        ],
+                      GestureDetector(
+                        onTap: (){
+                          RouterClass.routerClass.pushWidgetReplacement(LimitedOffer());
+                        },
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              IconAssets.limit,
+                              color: ColorManager.black,
+                              height: 20.h,
+                              width: 20.w,
+                            ),
+                            SizedBox(
+                              width: 30.w,
+                            ),
+                            Text(
+                              "الكمية المحدودة",
+                              style: getBoldStyle(
+                                  color: ColorManager.black, fontSize: 18),
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 12.h,
                       ),
                       //offer
-                      Row(
-                        children: [
-                          SvgPicture.asset(
-                            IconAssets.offer,
-                            color: ColorManager.black,
-                            height: 20.h,
-                            width: 20.w,
-                          ),
-                          SizedBox(
-                            width: 30.w,
-                          ),
-                          Text(
-                            " العروض",
-                            style: getBoldStyle(
-                                color: ColorManager.black, fontSize: 18),
-                          ),
-                        ],
+                      GestureDetector(
+                        onTap: (){
+                          RouterClass.routerClass.pushWidgetReplacement(FavouriteScreen());
+                        },
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              IconAssets.offer,
+                              color: ColorManager.black,
+                              height: 20.h,
+                              width: 20.w,
+                            ),
+                            SizedBox(
+                              width: 30.w,
+                            ),
+                            Text(
+                              " العروض",
+                              style: getBoldStyle(
+                                  color: ColorManager.black, fontSize: 18),
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 12.h,
@@ -443,21 +455,27 @@ class _HomeScreenState extends State<HomeScreen>
                         height: 12.h,
                       ),
                       //favorite
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.favorite,
-                            color: Colors.black,
-                          ),
-                          SizedBox(
-                            width: 30.w,
-                          ),
-                          Text(
-                            "المفضلة",
-                            style: getBoldStyle(
-                                color: ColorManager.black, fontSize: 18),
-                          ),
-                        ],
+                      GestureDetector(
+                        onTap: (){
+                          RouterClass.routerClass.pushWidgetReplacement(FavouriteScreen());
+
+                        },
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.favorite,
+                              color: Colors.black,
+                            ),
+                            SizedBox(
+                              width: 30.w,
+                            ),
+                            Text(
+                              "المفضلة",
+                              style: getBoldStyle(
+                                  color: ColorManager.black, fontSize: 18),
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 12.h,
