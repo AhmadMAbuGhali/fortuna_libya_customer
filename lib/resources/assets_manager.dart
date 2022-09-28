@@ -19,6 +19,8 @@ class IconAssets{
   static const String cart = '$ICON_PATH/cart.svg';
   static const String arrow = '$ICON_PATH/arrow.svg';
   static const String logout = '$ICON_PATH/logout.svg';
+  static const String cash = '$ICON_PATH/cash.svg';
+  static const String plus = '$ICON_PATH/plus.svg';
 
 
 }

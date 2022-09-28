@@ -13,6 +13,7 @@ import 'package:fortuna_libya_customer/ui/screens/profile/profile_screen.dart';
 
 import '../../../navigator/router_class.dart';
 import '../../../resources/color_manager.dart';
+import '../point/point_screen.dart';
 import '../product/producer_item.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -481,23 +482,28 @@ class _HomeScreenState extends State<HomeScreen>
                         height: 12.h,
                       ),
                       // point
-                      Row(
-                        children: [
-                          SvgPicture.asset(
-                            IconAssets.point,
-                            color: ColorManager.black,
-                            height: 20.h,
-                            width: 20.w,
-                          ),
-                          SizedBox(
-                            width: 30.w,
-                          ),
-                          Text(
-                            "  النقاط",
-                            style: getBoldStyle(
-                                color: ColorManager.black, fontSize: 18),
-                          ),
-                        ],
+                      GestureDetector(
+                        onTap: (){
+                          RouterClass.routerClass.pushWidgetReplacement(PointScreen());
+                        },
+                        child: Row(
+                          children: [
+                            SvgPicture.asset(
+                              IconAssets.point,
+                              color: ColorManager.black,
+                              height: 20.h,
+                              width: 20.w,
+                            ),
+                            SizedBox(
+                              width: 30.w,
+                            ),
+                            Text(
+                              "  النقاط",
+                              style: getBoldStyle(
+                                  color: ColorManager.black, fontSize: 18),
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 12.h,
