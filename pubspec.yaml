@@ -26,6 +26,9 @@ dependencies:
   string_validator:
   buttons_tabbar:
   image_picker:
+  get_it:
+  easy_localization:
+  sms_autofill:
 
 dev_dependencies:
   flutter_test:
@@ -44,7 +47,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icon/
-
+    - assets/language/
   fonts:
    - family: Dubai
      fonts:
