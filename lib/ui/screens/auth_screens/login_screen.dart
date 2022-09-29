@@ -109,7 +109,10 @@ class LoginScreen extends StatelessWidget {
                     child: SizedBox(
                         width: double.infinity,
                         height: 44.h,
-                        child: ElevatedButton(onPressed: (){}, child: Text('لوخدلا ليجست',style: getMediumStyle(color: ColorManager.white,fontSize: FontSize.s16),))),
+                        child: ElevatedButton(onPressed: (){
+                          RouterClass.routerClass
+                              .navigateTo(NavegatorConstant.homeApp);
+                        }, child: Text('لوخدلا ليجست',style: getMediumStyle(color: ColorManager.white,fontSize: FontSize.s16),))),
                   ),
                   SizedBox(
                     height: 16.h,

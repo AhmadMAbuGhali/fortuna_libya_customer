@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fortuna_libya_customer/navigator/router_class.dart';
 import 'package:fortuna_libya_customer/resources/assets_manager.dart';
 import 'package:fortuna_libya_customer/resources/color_manager.dart';
 import 'package:fortuna_libya_customer/resources/styles_manager.dart';
+import 'package:fortuna_libya_customer/ui/screens/order/order_details.dart';
 
 class ActiveOrder extends StatelessWidget {
   const ActiveOrder({Key? key}) : super(key: key);
@@ -62,7 +64,9 @@ class ActiveOrder extends StatelessWidget {
                     height: 35,
                     width: 128,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          RouterClass.routerClass.pushWidget(OrderDetails());
+                        },
                         style: ButtonStyle(
                           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
