@@ -5,11 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fortuna_libya_customer/resources/assets_manager.dart';
 import 'package:fortuna_libya_customer/resources/styles_manager.dart';
+import 'package:fortuna_libya_customer/ui/screens/cart/cart_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/favourite/favourite_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/limit_offer/limited_offer.dart';
 import 'package:fortuna_libya_customer/ui/screens/order/order_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/product/product_details.dart';
 import 'package:fortuna_libya_customer/ui/screens/profile/profile_screen.dart';
+import 'package:fortuna_libya_customer/ui/support/support_screen.dart';
 
 import '../../../navigator/router_class.dart';
 import '../../../resources/color_manager.dart';
@@ -82,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen>
           centerTitle: true,
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {RouterClass.routerClass.pushWidgetReplacement(CartScreen());},
               icon: SvgPicture.asset(IconAssets.cart),
             ),
           ],
@@ -119,7 +121,21 @@ class _HomeScreenState extends State<HomeScreen>
                           contentPadding: EdgeInsets.only(
                               top: 5, bottom: 10, left: 18, right: 18),
                           height: 40.h,
-                          backgroundColor: ColorManager.primary,
+                          decoration:const BoxDecoration(
+                            gradient:  LinearGradient(
+                                colors: [
+                                  Color(0xFF127AB9),
+                                  Color(0xFF006FAE),
+                                  Color(0xFF066CAC),
+                                  Color(0xFF045BA0),
+                                  Color(0xFF08589D),
+
+                                ],
+                                begin: FractionalOffset(0.0, 0.0,),
+                                end: FractionalOffset(1.0, 0.0),
+                                stops: [0.0,0.2,0.4,0.6 ,1.0],
+                                tileMode: TileMode.clamp),
+                          ),
                           unselectedBackgroundColor: Colors.white,
                           unselectedLabelStyle: TextStyle(color: Colors.black),
                           borderWidth: 1,
@@ -566,21 +582,26 @@ class _HomeScreenState extends State<HomeScreen>
                         height: 12.h,
                       ),
                       //support
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.headset_mic_sharp,
-                            color: Colors.black,
-                          ),
-                          SizedBox(
-                            width: 30.w,
-                          ),
-                          Text(
-                            " الدعم الفني",
-                            style: getBoldStyle(
-                                color: ColorManager.black, fontSize: 18),
-                          ),
-                        ],
+                      GestureDetector(
+                        onTap: (){
+                          RouterClass.routerClass.pushWidgetReplacement(SupportScreen());
+                        },
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.headset_mic_sharp,
+                              color: Colors.black,
+                            ),
+                            SizedBox(
+                              width: 30.w,
+                            ),
+                            Text(
+                              " الدعم الفني",
+                              style: getBoldStyle(
+                                  color: ColorManager.black, fontSize: 18),
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 12.h,

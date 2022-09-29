@@ -9,6 +9,8 @@ import 'package:fortuna_libya_customer/ui/screens/auth_screens/splash_screen.dar
 
 import 'package:provider/provider.dart';
 
+import '../ui/screens/home_screens/home_screen.dart';
+
 class RouterX {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -36,6 +38,13 @@ class RouterX {
           builder: (_) => ChangeNotifierProvider(
             create: (context) => AuthProvider(),
             child: ForgetPassword(),
+          ),
+        );
+      case NavegatorConstant.homeApp:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child: HomeScreen(),
           ),
         );
 

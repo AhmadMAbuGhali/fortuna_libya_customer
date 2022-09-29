@@ -21,6 +21,8 @@ class IconAssets{
   static const String logout = '$ICON_PATH/logout.svg';
   static const String cash = '$ICON_PATH/cash.svg';
   static const String plus = '$ICON_PATH/plus.svg';
+  static const String call = '$ICON_PATH/call.svg';
+  static const String msg = '$ICON_PATH/msg.svg';
 
 
 }

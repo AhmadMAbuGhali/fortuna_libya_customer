@@ -128,7 +128,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   //name of owner
                   CustomTextFormFiled(
-                    label: 'مالك الصيدلية',
+                    label: 'مسوؤل المشتريات',
                     hint: 'أحمد أبو غالي',
                     controller: name,
                     enable: false,

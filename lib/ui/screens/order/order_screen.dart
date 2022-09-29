@@ -112,7 +112,21 @@ class _OrderScreenState extends State<OrderScreen>
                         contentPadding: EdgeInsets.only(
                             top: 5, bottom: 10, left: 18, right: 18),
                         height: 40.h,
-                        backgroundColor: ColorManager.primary,
+                        decoration:const BoxDecoration(
+                          gradient:  LinearGradient(
+                              colors: [
+                                Color(0xFF127AB9),
+                                Color(0xFF006FAE),
+                                Color(0xFF066CAC),
+                                Color(0xFF045BA0),
+                                Color(0xFF08589D),
+
+                              ],
+                              begin: FractionalOffset(0.0, 0.0,),
+                              end: FractionalOffset(1.0, 0.0),
+                              stops: [0.0,0.2,0.4,0.6 ,1.0],
+                              tileMode: TileMode.clamp),
+                        ),
                         unselectedBackgroundColor: Colors.white,
                         unselectedLabelStyle: TextStyle(color: Colors.black),
                         borderWidth: 1,

@@ -61,17 +61,20 @@ class _PointScreenState extends State<PointScreen> {
             children: [
               Container(
                 height: 121.h,
-                decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                        colors: [
-                          Color(0xFF60CCE8),
-                          Color(0xFF083844),
-                        ],
-                        begin: FractionalOffset(0.0, 0.0),
-                        end: FractionalOffset(1.0, 0.0),
-                        stops: [0.0, 1.0],
-                        tileMode: TileMode.clamp),
-                    borderRadius: BorderRadius.circular(10)),
+                decoration:const BoxDecoration(
+                  gradient:  LinearGradient(
+                      colors: [
+                        Color(0xFF127AB9),
+                        Color(0xFF006FAE),
+                        Color(0xFF066CAC),
+                        Color(0xFF08589D),
+                        Color(0xFF045BA0),
+                      ],
+                      begin: FractionalOffset(0.0, 0.0,),
+                      end: FractionalOffset(1.0, 0.0),
+                      stops: [0.0,0.2,0.4,0.6 ,1.0],
+                      tileMode: TileMode.clamp),
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -141,17 +144,21 @@ class _PointScreenState extends State<PointScreen> {
               Container(
                 height: 60,
                 width: double.infinity,
-                decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                        colors: [
-                          Color(0xFF60CCE8),
-                          Color(0xFF083844),
-                        ],
-                        begin: FractionalOffset(0.0, 0.0),
-                        end: FractionalOffset(1.0, 0.0),
-                        stops: [0.0, 1.0],
-                        tileMode: TileMode.clamp),
-                    borderRadius: BorderRadius.circular(10)),
+                decoration:const BoxDecoration(
+                  gradient:  LinearGradient(
+                      colors: [
+                        Color(0xFF127AB9),
+                        Color(0xFF006FAE),
+                        Color(0xFF066CAC),
+                        Color(0xFF045BA0),
+                        Color(0xFF08589D),
+
+                      ],
+                      begin: FractionalOffset(0.0, 0.0,),
+                      end: FractionalOffset(1.0, 0.0),
+                      stops: [0.0,0.2,0.4,0.6 ,1.0],
+                      tileMode: TileMode.clamp),
+                ),
                 child: Center(
                     child: Text(
                   'يتم احتساب نقطة لكل 100 دينار',

@@ -7,7 +7,6 @@ import 'package:fortuna_libya_customer/navigator/routes_const.dart';
 import 'package:fortuna_libya_customer/resources/theme_manager.dart';
 import 'package:fortuna_libya_customer/services/auth_provider.dart';
 import 'package:fortuna_libya_customer/services/shared_preference_helper.dart';
-import 'package:fortuna_libya_customer/ui/screens/auth_screens/splash_screen.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 GetIt getIt = GetIt.instance;
