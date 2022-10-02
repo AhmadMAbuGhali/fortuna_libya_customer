@@ -6,6 +6,14 @@ import 'package:fortuna_libya_customer/ui/screens/auth_screens/login_screen.dart
 import 'package:fortuna_libya_customer/ui/screens/auth_screens/on_bording_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/auth_screens/otp_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/auth_screens/splash_screen.dart';
+import 'package:fortuna_libya_customer/ui/screens/cart/cart_screen.dart';
+import 'package:fortuna_libya_customer/ui/screens/favourite/favourite_screen.dart';
+import 'package:fortuna_libya_customer/ui/screens/limit_offer/limited_offer.dart';
+import 'package:fortuna_libya_customer/ui/screens/order/order_screen.dart';
+import 'package:fortuna_libya_customer/ui/screens/point/point_screen.dart';
+import 'package:fortuna_libya_customer/ui/screens/product/product_details.dart';
+import 'package:fortuna_libya_customer/ui/screens/profile/profile_screen.dart';
+import 'package:fortuna_libya_customer/ui/support/support_screen.dart';
 
 import 'package:provider/provider.dart';
 
@@ -47,6 +55,67 @@ class RouterX {
             child: HomeScreen(),
           ),
         );
+
+      case NavegatorConstant.cart:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child: CartScreen(),
+          ),
+        );
+
+
+
+      case NavegatorConstant.point:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child: PointScreen(),
+          ),
+        );
+      case NavegatorConstant.favourite:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child: FavouriteScreen(),
+          ),
+        );
+      case NavegatorConstant.order:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child: OrderScreen(),
+          ),
+        );
+      case NavegatorConstant.productDetails:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child: ProductDetails(),
+          ),
+        );
+      case NavegatorConstant.limitedOffer:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child: LimitedOffer(),
+          ),
+        );
+      case NavegatorConstant.profile:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child: ProfileScreen(),
+          ),
+        );
+        case NavegatorConstant.support:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child: SupportScreen(),
+          ),
+        );
+
 
       // // case NavegatorConstant.searchHearing:
       // //   return MaterialPageRoute(

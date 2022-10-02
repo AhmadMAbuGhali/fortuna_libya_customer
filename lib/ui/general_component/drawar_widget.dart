@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fortuna_libya_customer/navigator/router_class.dart';
+import 'package:fortuna_libya_customer/navigator/routes_const.dart';
 import 'package:fortuna_libya_customer/resources/assets_manager.dart';
 import 'package:fortuna_libya_customer/resources/color_manager.dart';
 import 'package:fortuna_libya_customer/resources/styles_manager.dart';
@@ -63,17 +64,20 @@ class DrawarWidget extends StatelessWidget  {
             Container(
               height: 60.h,
               width: 160.w,
-              decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                      colors: [
-                        Color(0xFF60CCE8),
-                        Color(0xFF083844),
-                      ],
-                      begin: FractionalOffset(0.0, 0.0),
-                      end: FractionalOffset(1.0, 0.0),
-                      stops: [0.0, 1.0],
-                      tileMode: TileMode.clamp),
-                  borderRadius: BorderRadius.circular(10)),
+              decoration:const BoxDecoration(
+                gradient:  LinearGradient(
+                    colors: [
+                      Color(0xFF127AB9),
+                      Color(0xFF006FAE),
+                      Color(0xFF066CAC),
+                      Color(0xFF08589D),
+                      Color(0xFF045BA0),
+                    ],
+                    begin: FractionalOffset(0.0, 0.0,),
+                    end: FractionalOffset(1.0, 0.0),
+                    stops: [0.0,0.2,0.4,0.6 ,1.0],
+                    tileMode: TileMode.clamp),
+              ),
               child: Center(
                   child: Text(
                     '5400',
@@ -93,7 +97,7 @@ class DrawarWidget extends StatelessWidget  {
                       GestureDetector(
                         onTap: () {
                           RouterClass.routerClass
-                              .pushWidgetReplacement(HomeScreen());
+                              .navigateTo(NavegatorConstant.homeApp);
                         },
                         child: Row(
                           children: [
@@ -119,7 +123,8 @@ class DrawarWidget extends StatelessWidget  {
                       GestureDetector(
                         onTap: () {
                           RouterClass.routerClass
-                              .pushWidgetReplacement(ProfileScreen());
+                              .navigateTo(NavegatorConstant.profile);
+
                         },
                         child: Row(
                           children: [
@@ -144,7 +149,9 @@ class DrawarWidget extends StatelessWidget  {
                       //order
                       GestureDetector(
                         onTap: (){
-                          RouterClass.routerClass.pushWidgetReplacement(OrderScreen());
+                          RouterClass.routerClass
+                              .navigateTo(NavegatorConstant.order);
+
                         },
                         child: Row(
                           children: [
@@ -171,7 +178,9 @@ class DrawarWidget extends StatelessWidget  {
                       //limit
                       GestureDetector(
                         onTap: (){
-                          RouterClass.routerClass.pushWidgetReplacement(LimitedOffer());
+                          RouterClass.routerClass
+                              .navigateTo(NavegatorConstant.limitedOffer);
+
                         },
                         child: Row(
                           children: [
@@ -198,7 +207,9 @@ class DrawarWidget extends StatelessWidget  {
                       //offer
                       GestureDetector(
                         onTap: (){
-                          RouterClass.routerClass.pushWidgetReplacement(FavouriteScreen());
+                          RouterClass.routerClass
+                              .navigateTo(NavegatorConstant.favourite);
+
                         },
                         child: Row(
                           children: [
@@ -245,7 +256,9 @@ class DrawarWidget extends StatelessWidget  {
                       //favorite
                       GestureDetector(
                         onTap: (){
-                          RouterClass.routerClass.pushWidgetReplacement(FavouriteScreen());
+                          RouterClass.routerClass
+                              .navigateTo(NavegatorConstant.favourite);
+
 
                         },
                         child: Row(
@@ -271,7 +284,8 @@ class DrawarWidget extends StatelessWidget  {
                       // point
                       GestureDetector(
                         onTap: (){
-                          RouterClass.routerClass.pushWidgetReplacement(PointScreen());
+                          RouterClass.routerClass
+                              .navigateTo(NavegatorConstant.point);
                         },
                         child: Row(
                           children: [
@@ -353,21 +367,28 @@ class DrawarWidget extends StatelessWidget  {
                         height: 12.h,
                       ),
                       //support
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.headset_mic_sharp,
-                            color: Colors.black,
-                          ),
-                          SizedBox(
-                            width: 30.w,
-                          ),
-                          Text(
-                            " الدعم الفني",
-                            style: getBoldStyle(
-                                color: ColorManager.black, fontSize: 18),
-                          ),
-                        ],
+                      GestureDetector(
+                        onTap: (){
+                          RouterClass.routerClass
+                              .navigateTo(NavegatorConstant.support);
+
+                        },
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.headset_mic_sharp,
+                              color: Colors.black,
+                            ),
+                            SizedBox(
+                              width: 30.w,
+                            ),
+                            Text(
+                              " الدعم الفني",
+                              style: getBoldStyle(
+                                  color: ColorManager.black, fontSize: 18),
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 12.h,
