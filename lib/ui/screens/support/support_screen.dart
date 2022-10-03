@@ -71,13 +71,13 @@ Image.asset(ImageAssets.logo,height: 120,width: 120,),
             children: [
               CircleAvatar(
                 radius: 30,
-                backgroundColor:Color(0xFFE8E8E8) ,
+                backgroundColor:const Color(0xFFE8E8E8) ,
                 child: SvgPicture.asset(IconAssets.call),
               ),
               SizedBox(width: 20.w,),
               CircleAvatar(
                 radius: 30,
-                backgroundColor:Color(0xFFE8E8E8) ,
+                backgroundColor:const Color(0xFFE8E8E8) ,
                 child: SvgPicture.asset(IconAssets.msg),
               ),
             ],
