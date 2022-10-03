@@ -8,13 +8,6 @@ import 'package:fortuna_libya_customer/ui/screens/order/order_details_item.dart'
 import '../../../navigator/router_class.dart';
 import '../../../resources/assets_manager.dart';
 import '../../../resources/color_manager.dart';
-import '../../support/support_screen.dart';
-import '../favourite/favourite_screen.dart';
-import '../home_screens/home_screen.dart';
-import '../limit_offer/limited_offer.dart';
-import '../order/order_screen.dart';
-import '../point/point_screen.dart';
-import '../profile/profile_screen.dart';
 
 
 class OrderDetails extends StatelessWidget {

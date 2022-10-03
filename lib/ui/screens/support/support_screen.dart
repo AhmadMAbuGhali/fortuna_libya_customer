@@ -5,14 +5,9 @@ import 'package:fortuna_libya_customer/resources/color_manager.dart';
 import 'package:fortuna_libya_customer/resources/styles_manager.dart';
 import 'package:fortuna_libya_customer/ui/general_component/drawar_widget.dart';
 
-import '../../navigator/router_class.dart';
-import '../../resources/assets_manager.dart';
-import '../screens/favourite/favourite_screen.dart';
-import '../screens/home_screens/home_screen.dart';
-import '../screens/limit_offer/limited_offer.dart';
-import '../screens/order/order_screen.dart';
-import '../screens/point/point_screen.dart';
-import '../screens/profile/profile_screen.dart';
+import '../../../resources/assets_manager.dart';
+
+
 
 class SupportScreen extends StatelessWidget {
   const SupportScreen({Key? key}) : super(key: key);

@@ -13,11 +13,11 @@ import 'package:fortuna_libya_customer/ui/screens/order/order_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/point/point_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/product/product_details.dart';
 import 'package:fortuna_libya_customer/ui/screens/profile/profile_screen.dart';
-import 'package:fortuna_libya_customer/ui/support/support_screen.dart';
 
 import 'package:provider/provider.dart';
 
 import '../ui/screens/home_screens/home_screen.dart';
+import '../ui/screens/support/support_screen.dart';
 
 class RouterX {
   static Route<dynamic> generateRoute(RouteSettings settings) {
