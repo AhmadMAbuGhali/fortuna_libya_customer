@@ -205,34 +205,34 @@ class DrawarWidget extends StatelessWidget  {
                         height: 12.h,
                       ),
                       //offer
-                      GestureDetector(
-                        onTap: (){
-                          RouterClass.routerClass
-                              .navigateTo(NavegatorConstant.favourite);
-
-                        },
-                        child: Row(
-                          children: [
-                            SvgPicture.asset(
-                              IconAssets.offer,
-                              color: ColorManager.black,
-                              height: 20.h,
-                              width: 20.w,
-                            ),
-                            SizedBox(
-                              width: 30.w,
-                            ),
-                            Text(
-                              " العروض",
-                              style: getBoldStyle(
-                                  color: ColorManager.black, fontSize: 18),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 12.h,
-                      ),
+                      // GestureDetector(
+                      //   onTap: (){
+                      //     RouterClass.routerClass
+                      //         .navigateTo(NavegatorConstant.favourite);
+                      //
+                      //   },
+                      //   child: Row(
+                      //     children: [
+                      //       SvgPicture.asset(
+                      //         IconAssets.offer,
+                      //         color: ColorManager.black,
+                      //         height: 20.h,
+                      //         width: 20.w,
+                      //       ),
+                      //       SizedBox(
+                      //         width: 30.w,
+                      //       ),
+                      //       Text(
+                      //         " العروض",
+                      //         style: getBoldStyle(
+                      //             color: ColorManager.black, fontSize: 18),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
+                      // SizedBox(
+                      //   height: 12.h,
+                      // ),
                       //notification
                       Row(
                         children: [

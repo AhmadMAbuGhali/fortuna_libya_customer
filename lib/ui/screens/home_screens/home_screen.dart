@@ -146,24 +146,32 @@ class _HomeScreenState extends State<HomeScreen>
                               Center(
                                 child: Padding(
                                   padding: const EdgeInsets.only(top: 10),
-                                  child: GridView.builder(
-                                      gridDelegate:
-                                          SliverGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount: 2,
-                                        mainAxisSpacing: 10,
-                                        crossAxisSpacing: 10,
-                                        // width / height: fixed for *all* items
-                                        childAspectRatio: 0.87,
+                                  child: Column(
+                                    children: [
+                                      Text('باقي على انتهاء العروض  1 يوم و 12 ساعة و 8 دقائق'),
+                                      SizedBox(height: 8.h,),
+                                      Expanded(
+                                        child: GridView.builder(
+                                            gridDelegate:
+                                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                              crossAxisCount: 2,
+                                              mainAxisSpacing: 10,
+                                              crossAxisSpacing: 10,
+                                              // width / height: fixed for *all* items
+                                              childAspectRatio: 0.87,
+                                            ),
+                                            itemBuilder: (context, index) {
+                                              return GestureDetector(
+                                                  onTap: () {
+                                                    RouterClass.routerClass
+                                                        .pushWidgetReplacement(
+                                                            ProductDetails());
+                                                  },
+                                                  child: ProducerItem());
+                                            }),
                                       ),
-                                      itemBuilder: (context, index) {
-                                        return GestureDetector(
-                                            onTap: () {
-                                              RouterClass.routerClass
-                                                  .pushWidgetReplacement(
-                                                      ProductDetails());
-                                            },
-                                            child: ProducerItem());
-                                      }),
+                                    ],
+                                  ),
                                 ),
                               ),
                               Center(
