@@ -3,8 +3,10 @@ import 'package:fortuna_libya_customer/navigator/routes_const.dart';
 import 'package:fortuna_libya_customer/services/auth_provider.dart';
 import 'package:fortuna_libya_customer/ui/screens/auth_screens/forget_password.dart';
 import 'package:fortuna_libya_customer/ui/screens/auth_screens/login_screen.dart';
+import 'package:fortuna_libya_customer/ui/screens/auth_screens/new_password_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/auth_screens/on_bording_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/auth_screens/otp_screen.dart';
+import 'package:fortuna_libya_customer/ui/screens/auth_screens/sing_up_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/auth_screens/splash_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/cart/cart_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/favourite/favourite_screen.dart';
@@ -16,6 +18,7 @@ import 'package:fortuna_libya_customer/ui/screens/profile/profile_screen.dart';
 
 import 'package:provider/provider.dart';
 
+import '../ui/screens/auth_screens/sign_up2_screen.dart';
 import '../ui/screens/home_screens/home_screen.dart';
 import '../ui/screens/support/support_screen.dart';
 
@@ -34,6 +37,20 @@ class RouterX {
           builder: (_) => ChangeNotifierProvider(
             create: (context) => AuthProvider(),
             child: LoginScreen(),
+          ),
+        );
+        case NavegatorConstant.signUp:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child: SignUpScreen(),
+          ),
+        );
+        case NavegatorConstant.signUp2:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child: SignUpScreen2(),
           ),
         );
       case NavegatorConstant.onBoarding:
@@ -63,8 +80,6 @@ class RouterX {
             child: CartScreen(),
           ),
         );
-
-
 
       case NavegatorConstant.point:
         return MaterialPageRoute(
@@ -128,14 +143,14 @@ class RouterX {
             child: OTPScreen(),
           ),
         );
-      // case NavegatorConstant.createNewPassword:
-      //   return MaterialPageRoute(
-      //     builder: (_) => ChangeNotifierProvider(
-      //       create: (context) => AuthProvider(),
-      //       child: NewPasswordScreen(),
-      //     ),
-      //   );
-      //
+      case NavegatorConstant.createNewPassword:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child: NewPassword(),
+          ),
+        );
+
       // case NavegatorConstant.naveBarApp:
       //   return MaterialPageRoute(
       //     builder: (context) => MultiProvider(providers: [

@@ -1,4 +1,3 @@
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,21 +11,18 @@ import 'package:fortuna_libya_customer/services/auth_provider.dart';
 import 'package:fortuna_libya_customer/ui/general_component/custom_text_form_filed.dart';
 import 'package:provider/provider.dart';
 
-// ignore: must_be_immutable
-class LoginScreen extends StatelessWidget {
+class SignUpScreen extends StatelessWidget {
   final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  GlobalKey<FormState> logFormkey = GlobalKey<FormState>();
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<FormState> signFormkey = GlobalKey<FormState>();
+   SignUpScreen({Key? key}) : super(key: key);
 
-  LoginScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
       body: Consumer<AuthProvider>(builder: (context, provider, x) {
         return Form(
-          key: logFormkey,
+          key: signFormkey,
           child: SingleChildScrollView(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -49,8 +45,8 @@ class LoginScreen extends StatelessWidget {
                   Padding(
                     padding:   EdgeInsets.symmetric(horizontal: 16.w),
                     child: CustomTextFormFiled(
-                      label: 'ينورتكلالا ديربلا',
-                      hint: 'انه ينورتكلالا ديربلا ةباتكب مق',
+                      label: 'اسم الصيدلية',
+                      hint: 'اسم الصيدلية',
                       controller: _userNameController,
                       enable: true,
                     ),
@@ -58,47 +54,26 @@ class LoginScreen extends StatelessWidget {
                   Padding(
                     padding:   EdgeInsets.symmetric(horizontal: 16.w),
                     child: CustomTextFormFiled(
-                      label: 'رورملا ةملك',
-                      hint: 'انه رورملا ةملك ةباتكب مق',
+                      label: ' مسؤول المشتريات',
+                      hint: ' مسؤول المشتريات',
                       controller: _passwordController,
                       enable: true,
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: Row(
-                      children: <Widget>[
-                        Transform.scale(
-                          scale: 1.5,
-                          child: Checkbox(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4.r)),
-                            checkColor: ColorManager.black,
-                            activeColor: ColorManager.primary,
-                            value: provider.isCheckLogin,
-                            onChanged: (bool? value) {
-                              provider.cahngeIscheckLogin();
-                            },
-                          ),
-                        ),
-                        Text('تذكرني',
-                            style: getBoldStyle(
-                                color: ColorManager.black,
-                                fontSize: FontSize.s12.sp)), //Text
-                        const Spacer(),
-                        TextButton(
-                          onPressed: () {
-                            RouterClass.routerClass
-                                .navigateTo(NavegatorConstant.forgetPassword);
-                          },
-                          child: Text(
-                            'نسيت كلمة المرور؟',
-                            style: getBoldStyle(
-                                color: ColorManager.black,
-                                fontSize: FontSize.s12.sp),
-                          ),
-                        )
-                      ],
+                  ), Padding(
+                    padding:   EdgeInsets.symmetric(horizontal: 16.w),
+                    child: CustomTextFormFiled(
+                      label: 'البريد الإلكتروني',
+                      hint: 'example@gmail.com',
+                      controller: _passwordController,
+                      enable: true,
+                    ),
+                  ), Padding(
+                    padding:   EdgeInsets.symmetric(horizontal: 16.w),
+                    child: CustomTextFormFiled(
+                      label: 'رقم الجوال',
+                      hint: '0000000000',
+                      controller: _passwordController,
+                      enable: true,
                     ),
                   ),
                   SizedBox(
@@ -111,8 +86,8 @@ class LoginScreen extends StatelessWidget {
                         height: 44.h,
                         child: ElevatedButton(onPressed: (){
                           RouterClass.routerClass
-                              .navigateTo(NavegatorConstant.homeApp);
-                        }, child: Text('لوخدلا ليجست',style: getMediumStyle(color: ColorManager.white,fontSize: FontSize.s16),))),
+                              .navigateTo(NavegatorConstant.signUp2);
+                        }, child: Text('التالي',style: getMediumStyle(color: ColorManager.white,fontSize: FontSize.s16),))),
                   ),
                   SizedBox(
                     height: 16.h,
@@ -121,14 +96,12 @@ class LoginScreen extends StatelessWidget {
                     text: TextSpan(
                       children: <TextSpan>[
                         TextSpan(
-                            text: 'ليس لديك حساب ؟',
+                            text: ' لديك حساب ؟',
                             style: getRegularStyle(color: ColorManager.primary,fontSize: FontSize.s14)),
                         TextSpan(
-                          text: 'إنشاء حساب',
-                          style: getBoldStyle(color:ColorManager.primary,fontSize: FontSize.s14),
-                           recognizer:  TapGestureRecognizer()..onTap = () => RouterClass.routerClass.navigateToAndRemove(NavegatorConstant.signUp)
-
-
+                            text: 'تسجيل الدخول',
+                            style: getBoldStyle(color:ColorManager.primary,fontSize: FontSize.s14),
+                            recognizer:  TapGestureRecognizer()..onTap = () => RouterClass.routerClass.navigateToAndRemove(NavegatorConstant.login)
                         ),
 
                       ],

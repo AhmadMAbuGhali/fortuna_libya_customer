@@ -4,6 +4,8 @@ class NavegatorConstant {
   static const String onBoarding = '/onBoarding';
   static const String noInterNet = '/noInterNet';
   static const String login = '/login';
+  static const String signUp = '/signUp';
+  static const String signUp2 = '/signUp2';
   static const String forgetPassword = '/forgetPassword';
   static const String otp = '/OTPScreen';
   static const String createNewPassword = '/createNewPassword';

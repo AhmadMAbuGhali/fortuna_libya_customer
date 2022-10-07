@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fortuna_libya_customer/navigator/router_class.dart';
+import 'package:fortuna_libya_customer/navigator/routes_const.dart';
 import 'package:fortuna_libya_customer/resources/assets_manager.dart';
 import 'package:fortuna_libya_customer/resources/color_manager.dart';
 import 'package:fortuna_libya_customer/resources/styles_manager.dart';
@@ -10,8 +12,9 @@ import 'package:sms_autofill/sms_autofill.dart';
 import '../../../resources/font_manager.dart';
 
 class OTPScreen extends StatelessWidget {
-  OTPScreen({Key? key}) : super(key: key);
-  TextEditingController otpController = TextEditingController();
+  final TextEditingController otpController = TextEditingController();
+   OTPScreen({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -71,8 +74,8 @@ class OTPScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     height: 44.h,
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: ElevatedButton(onPressed: ()async {
-
+                    child: ElevatedButton(onPressed: provider.isLoading?null:()async {
+                      RouterClass.routerClass.navigateTo(NavegatorConstant.createNewPassword);
                     },
                         child:provider.isLoading?Row(children: [
                           Text('تأكيد', style: getMediumStyle(color: ColorManager.white, fontSize: FontSize.s18.sp)),
@@ -81,10 +84,6 @@ class OTPScreen extends StatelessWidget {
                         ],):Text('تأكيد', style: getMediumStyle(color: ColorManager.white, fontSize: FontSize.s18.sp))
                     ),
                   ),
-
-
-
-
                 ],),
             );
           },
