@@ -62,12 +62,13 @@ import 'package:provider/provider.dart';
                     hintText: 'أدخل كلمة المرور',
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'كلمة المرور مطلوبة ';
+                        return 'كلمة المرور مطلوبة';
                       }
                       return null;
                     },
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.name, label: 'كلمة المرور',
+                    obscureText: true,
                   ),
 
                   Padding(

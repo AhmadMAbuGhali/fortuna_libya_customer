@@ -7,6 +7,11 @@ class AuthProvider extends ChangeNotifier {
     isLoading = !isLoading;
     notifyListeners();
   }
+ bool showPass = false;
+  changeShowPass() {
+    showPass = !showPass;
+    notifyListeners();
+  }
 
   //save login
   bool isCheckLogin = false;
