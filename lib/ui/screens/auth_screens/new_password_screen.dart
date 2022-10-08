@@ -46,14 +46,17 @@ class NewPassword extends StatelessWidget {
                     style: getMediumStyle(color: ColorManager.otpDesc, fontSize: FontSize.s14),
                   ),
                   SizedBox(height: 8.h),
-                  Padding(
-                    padding:   EdgeInsets.symmetric(horizontal: 16.w),
-                    child: CustomTextFormFiled(
-                      label: 'كلمة المرور',
-                      hint: 'ادخل كلمة المرور',
-                      controller: passController,
-                      enable: true,
-                    ),
+                  CustomTextFeild(
+                    controller: provider.forgetEmailController,
+                    hintText: 'أدخل البريد الإلكتروني',
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'البريد الإلكتروني مطلوب ';
+                      }
+                      return null;
+                    },
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.name, label: 'البريد الإلكتروني',
                   ),
 
 

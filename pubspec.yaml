@@ -30,6 +30,7 @@ dependencies:
   easy_localization:
   sms_autofill:
   lottie:
+  dropdown_button2:
 dev_dependencies:
   flutter_test:
 

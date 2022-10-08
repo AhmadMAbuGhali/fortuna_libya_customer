@@ -60,136 +60,136 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ],
         ),
-        body: Form(
-          key: formKey,
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          showModalBottomSheet(
-                            context: context,
-                            builder: (builder) => bottomSheet(),
-                          );
-
-                          // setState(() {
-                          //   _getFromGallery();
-                          // });
-                        },
-                        child: Center(
-                          child: CircleAvatar(
-                            radius: 60,
-                            foregroundImage: imageFile == null
-                                ? Image.asset(
-                                    ImageAssets.upload,
-                                  ).image
-                                : Image.file(
-                                    imageFile!,
-                                    fit: BoxFit.cover,
-                                  ).image,
-                            backgroundImage: imageFile == null
-                                ? Image.asset(
-                                    ImageAssets.upload,
-                                  ).image
-                                : Image.file(
-                                    imageFile!,
-                                    fit: BoxFit.cover,
-                                  ).image,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 14.h,
-                  ),
-                  Center(
-                    child: Text(
-                      'تعديل صورة الملف الشخصي',
-                      style: getBoldStyle(color: ColorManager.black),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  //name
-                  CustomTextFormFiled(
-                    label: 'الإسم',
-                    hint: 'ليبيا الأمل',
-                    controller: name,
-                    enable: false,
-                  ),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  //name of owner
-                  CustomTextFormFiled(
-                    label: 'مسوؤل المشتريات',
-                    hint: 'أحمد أبو غالي',
-                    controller: name,
-                    enable: false,
-                  ),
-                  // mobile number
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  CustomTextFormFiled(
-                    label: 'رقم الهاتف',
-                    hint: '+218 92-848418',
-                    controller: name,
-                    enable: false,
-                  ),
-                  //email
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  CustomTextFormFiled(
-                    label: 'البريد الالكتروني',
-                    hint: 'email@example.com',
-                    controller: name,
-                    enable: false,
-                  ),
-                  //city
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  CustomTextFormFiled(
-                    label: 'المدينة',
-                    hint: 'طرابلس',
-                    controller: name,
-                    enable: true,
-                  ),
-                  //address
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  CustomTextFormFiled(
-                    label: 'العنوان',
-                    hint: 'طريق جامع الصقع',
-                    controller: name,
-                    enable: true,
-                  ),
-                  //password
-                  SizedBox(
-                    height: 20.h,
-                  ),
-
-                  CustomTextFormFiled(
-                    label: 'كلمة المرور',
-                    hint: '*******************',
-                    controller: name,
-                    enable: true,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
+        // body: Form(
+        //   key: formKey,
+        //   child: SingleChildScrollView(
+        //     child: Padding(
+        //       padding: const EdgeInsets.all(16.0),
+        //       child: Column(
+        //         children: [
+        //           Row(
+        //             mainAxisAlignment: MainAxisAlignment.center,
+        //             children: [
+        //               InkWell(
+        //                 onTap: () {
+        //                   showModalBottomSheet(
+        //                     context: context,
+        //                     builder: (builder) => bottomSheet(),
+        //                   );
+        //
+        //                   // setState(() {
+        //                   //   _getFromGallery();
+        //                   // });
+        //                 },
+        //                 child: Center(
+        //                   child: CircleAvatar(
+        //                     radius: 60,
+        //                     foregroundImage: imageFile == null
+        //                         ? Image.asset(
+        //                             ImageAssets.upload,
+        //                           ).image
+        //                         : Image.file(
+        //                             imageFile!,
+        //                             fit: BoxFit.cover,
+        //                           ).image,
+        //                     backgroundImage: imageFile == null
+        //                         ? Image.asset(
+        //                             ImageAssets.upload,
+        //                           ).image
+        //                         : Image.file(
+        //                             imageFile!,
+        //                             fit: BoxFit.cover,
+        //                           ).image,
+        //                   ),
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //           SizedBox(
+        //             height: 14.h,
+        //           ),
+        //           Center(
+        //             child: Text(
+        //               'تعديل صورة الملف الشخصي',
+        //               style: getBoldStyle(color: ColorManager.black),
+        //             ),
+        //           ),
+        //           SizedBox(
+        //             height: 20.h,
+        //           ),
+        //           //name
+        //           CustomTextFormFiled(
+        //             label: 'الإسم',
+        //             hint: 'ليبيا الأمل',
+        //             controller: name,
+        //             enable: false,
+        //           ),
+        //           SizedBox(
+        //             height: 16.h,
+        //           ),
+        //           //name of owner
+        //           CustomTextFormFiled(
+        //             label: 'مسوؤل المشتريات',
+        //             hint: 'أحمد أبو غالي',
+        //             controller: name,
+        //             enable: false,
+        //           ),
+        //           // mobile number
+        //           SizedBox(
+        //             height: 20.h,
+        //           ),
+        //           CustomTextFormFiled(
+        //             label: 'رقم الهاتف',
+        //             hint: '+218 92-848418',
+        //             controller: name,
+        //             enable: false,
+        //           ),
+        //           //email
+        //           SizedBox(
+        //             height: 20.h,
+        //           ),
+        //           CustomTextFormFiled(
+        //             label: 'البريد الالكتروني',
+        //             hint: 'email@example.com',
+        //             controller: name,
+        //             enable: false,
+        //           ),
+        //           //city
+        //           SizedBox(
+        //             height: 20.h,
+        //           ),
+        //           CustomTextFormFiled(
+        //             label: 'المدينة',
+        //             hint: 'طرابلس',
+        //             controller: name,
+        //             enable: true,
+        //           ),
+        //           //address
+        //           SizedBox(
+        //             height: 20.h,
+        //           ),
+        //           CustomTextFormFiled(
+        //             label: 'العنوان',
+        //             hint: 'طريق جامع الصقع',
+        //             controller: name,
+        //             enable: true,
+        //           ),
+        //           //password
+        //           SizedBox(
+        //             height: 20.h,
+        //           ),
+        //
+        //           CustomTextFormFiled(
+        //             label: 'كلمة المرور',
+        //             hint: '*******************',
+        //             controller: name,
+        //             enable: true,
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //   ),
+        // ),
         drawer: DrawarWidget(
             function: () => scaffoldKey.currentState?.closeDrawer()),
       ),

@@ -17,5 +17,7 @@ class ColorManager {
   static Color grayTime = const Color(0xffCACACA);
   static Color onBordingDes = const Color(0xff7A7C7B);
   static Color otpDesc = const Color(0xff898A8E);
+  static Color onBordIndecator = const Color(0xffD9D9D9);
+  static Color borderTextFiel = const Color(0xffE5E5E5);
 
  }

@@ -12,13 +12,12 @@ import 'package:fortuna_libya_customer/services/auth_provider.dart';
 import 'package:fortuna_libya_customer/ui/general_component/custom_text_form_filed.dart';
 import 'package:provider/provider.dart';
 
-// ignore: must_be_immutable
+
 class ForgetPassword extends StatelessWidget {
-  TextEditingController _emailController = TextEditingController();
 
-  GlobalKey<FormState> logFormkey = GlobalKey<FormState>();
+ final GlobalKey<FormState> logFormkey = GlobalKey<FormState>();
 
-  ForgetPassword({super.key});
+    ForgetPassword({super.key});
 
 
   @override
@@ -46,14 +45,17 @@ class ForgetPassword extends StatelessWidget {
                     style: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s18),
                   ),
                   SizedBox(height: 8.h),
-                  Padding(
-                    padding:   EdgeInsets.symmetric(horizontal: 16.w),
-                    child: CustomTextFormFiled(
-                      label: 'ينورتكلالا ديربلا',
-                      hint: 'انه ينورتكلالا ديربلا ةباتكب مق',
-                      controller: _emailController,
-                      enable: true,
-                    ),
+                  CustomTextFeild(
+                    controller: provider.forgetEmailController,
+                    hintText: 'أدخل البريد الإلكتروني',
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'البريد الإلكتروني مطلوب ';
+                      }
+                      return null;
+                    },
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.name, label: 'البريد الإلكتروني',
                   ),
 
 

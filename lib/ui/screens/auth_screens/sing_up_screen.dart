@@ -12,8 +12,7 @@ import 'package:fortuna_libya_customer/ui/general_component/custom_text_form_fil
 import 'package:provider/provider.dart';
 
 class SignUpScreen extends StatelessWidget {
-  final TextEditingController _userNameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+
   final GlobalKey<FormState> signFormkey = GlobalKey<FormState>();
    SignUpScreen({Key? key}) : super(key: key);
 
@@ -42,39 +41,53 @@ class SignUpScreen extends StatelessWidget {
                     style: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s18),
                   ),
                   SizedBox(height: 8.h),
-                  Padding(
-                    padding:   EdgeInsets.symmetric(horizontal: 16.w),
-                    child: CustomTextFormFiled(
-                      label: 'اسم الصيدلية',
-                      hint: 'اسم الصيدلية',
-                      controller: _userNameController,
-                      enable: true,
-                    ),
+                  CustomTextFeild(
+                    controller: provider.forgetEmailController,
+                    hintText: 'أدخل البريد الإلكتروني',
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'البريد الإلكتروني مطلوب ';
+                      }
+                      return null;
+                    },
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.name, label: 'البريد الإلكتروني',
                   ),
-                  Padding(
-                    padding:   EdgeInsets.symmetric(horizontal: 16.w),
-                    child: CustomTextFormFiled(
-                      label: ' مسؤول المشتريات',
-                      hint: ' مسؤول المشتريات',
-                      controller: _passwordController,
-                      enable: true,
-                    ),
-                  ), Padding(
-                    padding:   EdgeInsets.symmetric(horizontal: 16.w),
-                    child: CustomTextFormFiled(
-                      label: 'البريد الإلكتروني',
-                      hint: 'example@gmail.com',
-                      controller: _passwordController,
-                      enable: true,
-                    ),
-                  ), Padding(
-                    padding:   EdgeInsets.symmetric(horizontal: 16.w),
-                    child: CustomTextFormFiled(
-                      label: 'رقم الجوال',
-                      hint: '0000000000',
-                      controller: _passwordController,
-                      enable: true,
-                    ),
+                  CustomTextFeild(
+                    controller: provider.forgetEmailController,
+                    hintText: 'أدخل البريد الإلكتروني',
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'البريد الإلكتروني مطلوب ';
+                      }
+                      return null;
+                    },
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.name, label: 'البريد الإلكتروني',
+                  ),
+                  CustomTextFeild(
+                    controller: provider.forgetEmailController,
+                    hintText: 'أدخل البريد الإلكتروني',
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'البريد الإلكتروني مطلوب ';
+                      }
+                      return null;
+                    },
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.name, label: 'البريد الإلكتروني',
+                  ),
+                  CustomTextFeild(
+                    controller: provider.forgetEmailController,
+                    hintText: 'أدخل البريد الإلكتروني',
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'البريد الإلكتروني مطلوب ';
+                      }
+                      return null;
+                    },
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.name, label: 'البريد الإلكتروني',
                   ),
                   SizedBox(
                     height: 14.h,

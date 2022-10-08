@@ -12,14 +12,13 @@ import 'package:fortuna_libya_customer/services/auth_provider.dart';
 import 'package:fortuna_libya_customer/ui/general_component/custom_text_form_filed.dart';
 import 'package:provider/provider.dart';
 
-// ignore: must_be_immutable
-class LoginScreen extends StatelessWidget {
-  final TextEditingController _userNameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  GlobalKey<FormState> logFormkey = GlobalKey<FormState>();
+ class LoginScreen extends StatelessWidget {
+
+  final GlobalKey<FormState> logFormkey = GlobalKey<FormState>();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,24 +45,31 @@ class LoginScreen extends StatelessWidget {
                     style: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s18),
                   ),
                   SizedBox(height: 8.h),
-                  Padding(
-                    padding:   EdgeInsets.symmetric(horizontal: 16.w),
-                    child: CustomTextFormFiled(
-                      label: 'ينورتكلالا ديربلا',
-                      hint: 'انه ينورتكلالا ديربلا ةباتكب مق',
-                      controller: _userNameController,
-                      enable: true,
-                    ),
+                  CustomTextFeild(
+                    controller: provider.loginEmailController,
+                    hintText: 'أدخل البريد الإلكتروني',
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'البريد الإلكتروني مطلوب ';
+                      }
+                      return null;
+                    },
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.name, label: 'البريد الإلكتروني',
                   ),
-                  Padding(
-                    padding:   EdgeInsets.symmetric(horizontal: 16.w),
-                    child: CustomTextFormFiled(
-                      label: 'رورملا ةملك',
-                      hint: 'انه رورملا ةملك ةباتكب مق',
-                      controller: _passwordController,
-                      enable: true,
-                    ),
+                  CustomTextFeild(
+                    controller:  provider.loginPasswordController,
+                    hintText: 'أدخل كلمة المرور',
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'كلمة المرور مطلوبة ';
+                      }
+                      return null;
+                    },
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.name, label: 'كلمة المرور',
                   ),
+
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
                     child: Row(
@@ -77,7 +83,7 @@ class LoginScreen extends StatelessWidget {
                             activeColor: ColorManager.primary,
                             value: provider.isCheckLogin,
                             onChanged: (bool? value) {
-                              provider.cahngeIscheckLogin();
+                              provider.changeIsCheckLogin();
                             },
                           ),
                         ),
@@ -127,10 +133,7 @@ class LoginScreen extends StatelessWidget {
                           text: 'إنشاء حساب',
                           style: getBoldStyle(color:ColorManager.primary,fontSize: FontSize.s14),
                            recognizer:  TapGestureRecognizer()..onTap = () => RouterClass.routerClass.navigateToAndRemove(NavegatorConstant.signUp)
-
-
                         ),
-
                       ],
                     ),
                   ),
