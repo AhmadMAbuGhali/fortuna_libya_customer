@@ -73,10 +73,11 @@ class ProducerItem extends StatelessWidget {
           ),
           Positioned(
             child: CircleAvatar(
-              radius: 40,
+              radius: 50,
+              backgroundColor: Colors.transparent,
               child: Image.asset(
-                ImageAssets.onboarding2,
-                fit: BoxFit.fill,
+                ImageAssets.item1,
+                fit: BoxFit.fitHeight,
               ),
             ),
             bottom: 90,
