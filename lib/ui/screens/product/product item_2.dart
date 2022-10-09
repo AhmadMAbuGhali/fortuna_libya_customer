@@ -6,16 +6,11 @@ import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
 
 class ProductHomeWidget extends StatelessWidget {
-
-  List<String> sizeProduct=[];
-  List<String> colorProduct=[];
-  String markaProduct='';
-  String samarProduct='';
-  String? dicount;
+  const ProductHomeWidget({super.key});
   @override
   Widget build(BuildContext context) {
   
-    return InkWell(
+    return GestureDetector(
       onTap: (){
        
       },

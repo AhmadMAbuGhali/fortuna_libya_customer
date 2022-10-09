@@ -147,22 +147,16 @@ class _HomeScreenState extends State<HomeScreen>
                                     padding: const EdgeInsets.only(top: 10),
                                     child: GridView.builder(
                                         gridDelegate:
-                                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                              SliverGridDelegateWithFixedCrossAxisCount(
                                           crossAxisCount: 2,
                                           mainAxisSpacing: 10,
                                           crossAxisSpacing: 10,
-                                          // width / height: fixed for *all* items
-                                          childAspectRatio: 0.87,
+                                          // childAspectRatio: 0.87,
+                                              mainAxisExtent: 190.h,
                                         ),
-                                        itemCount: 12,
+                                        itemCount: 13,
                                         itemBuilder: (context, index) {
-                                          return GestureDetector(
-                                              onTap: () {
-                                                RouterClass.routerClass
-                                                    .pushWidgetReplacement(
-                                                        const ProductDetails());
-                                              },
-                                              child: ProductHomeWidget());
+                                          return  const ProductHomeWidget();
                                         }),
                                   ),
                                 ),
@@ -171,12 +165,13 @@ class _HomeScreenState extends State<HomeScreen>
                                     padding: const EdgeInsets.only(top: 10),
                                     child: GridView.builder(
                                         gridDelegate:
-                                        const SliverGridDelegateWithFixedCrossAxisCount(
+                                          SliverGridDelegateWithFixedCrossAxisCount(
                                           crossAxisCount: 2,
                                           mainAxisSpacing: 10,
                                           crossAxisSpacing: 10,
                                           // width / height: fixed for *all* items
-                                          childAspectRatio: 0.87,
+                                          // childAspectRatio: 0.87,
+                                          mainAxisExtent: 190.h,
                                         ),
                                         itemCount: 12,
                                         itemBuilder: (context, index) {
@@ -200,12 +195,14 @@ class _HomeScreenState extends State<HomeScreen>
                                         Expanded(
                                           child: GridView.builder(
                                               gridDelegate:
-                                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                                SliverGridDelegateWithFixedCrossAxisCount(
                                                 crossAxisCount: 2,
                                                 mainAxisSpacing: 10,
                                                 crossAxisSpacing: 10,
                                                 // width / height: fixed for *all* items
-                                                childAspectRatio: 0.87,
+                                                // childAspectRatio: 0.87,
+                                                mainAxisExtent: 190.h,
+
                                               ),
                                               itemCount: 12,
                                               itemBuilder: (context, index) {

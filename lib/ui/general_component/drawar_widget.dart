@@ -9,8 +9,8 @@ import 'package:fortuna_libya_customer/resources/color_manager.dart';
 import 'package:fortuna_libya_customer/resources/styles_manager.dart';
 
 class DrawarWidget extends StatelessWidget  {
-    DrawarWidget({Key? key,required this.function}) : super(key: key);
-    VoidCallback function;
+    const DrawarWidget({Key? key,required this.function}) : super(key: key);
+  final  VoidCallback function;
   @override
   Widget build(BuildContext context) {
     return  Drawer(
