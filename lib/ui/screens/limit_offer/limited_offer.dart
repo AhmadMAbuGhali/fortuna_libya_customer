@@ -75,7 +75,7 @@ TextEditingController searchController = TextEditingController();
               Expanded(
                 child: GridView.builder(
                     gridDelegate:
-                    SliverGridDelegateWithFixedCrossAxisCount(
+                    const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10,
@@ -87,9 +87,9 @@ TextEditingController searchController = TextEditingController();
                           onTap: () {
                             RouterClass.routerClass
                                 .pushWidgetReplacement(
-                                ProductDetails());
+                                const ProductDetails());
                           },
-                          child: LimitedOfferItem());
+                          child: const LimitedOfferItem());
                     }),
               ),
             ],
