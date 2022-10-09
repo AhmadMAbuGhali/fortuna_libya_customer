@@ -4,12 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fortuna_libya_customer/ui/general_component/drawar_widget.dart';
 
-import '../../../navigator/router_class.dart';
 import '../../../resources/assets_manager.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
-import '../home_screens/home_screen.dart';
-import '../profile/profile_screen.dart';
+
 
 class ProductDetails extends StatefulWidget {
   const ProductDetails({Key? key}) : super(key: key);
@@ -115,7 +113,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       child: TextFormField(
                         decoration: InputDecoration(
                           contentPadding:
-                              EdgeInsets.fromLTRB(10.0, 10.0, 20.0, 10.0),
+                              const EdgeInsets.fromLTRB(10.0, 10.0, 20.0, 10.0),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(5.0),
                               borderSide:
@@ -171,7 +169,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           isFav == false
-                              ? Icon(Icons.favorite_border)
+                              ? const Icon(Icons.favorite_border)
                               : Icon(
                                   Icons.favorite,
                                   color: ColorManager.red,

@@ -1,25 +1,22 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fortuna_libya_customer/resources/assets_manager.dart';
 import 'package:fortuna_libya_customer/resources/styles_manager.dart';
 import 'package:fortuna_libya_customer/ui/general_component/drawar_widget.dart';
-import 'package:fortuna_libya_customer/ui/screens/favourite/favourite_screen.dart';
-import 'package:fortuna_libya_customer/ui/screens/limit_offer/limited_offer.dart';
-import 'package:fortuna_libya_customer/ui/screens/order/order_screen.dart';
+
 import 'package:fortuna_libya_customer/ui/screens/product/product%20item_2.dart';
 import 'package:fortuna_libya_customer/ui/screens/product/product_details.dart';
-import 'package:fortuna_libya_customer/ui/screens/profile/profile_screen.dart';
 
 import '../../../navigator/router_class.dart';
 import '../../../resources/color_manager.dart';
-import '../point/point_screen.dart';
-import '../product/producer_item.dart';
+
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -117,13 +114,13 @@ class _HomeScreenState extends State<HomeScreen>
                     child: Column(
                       children: <Widget>[
                         ButtonsTabBar(
-                          buttonMargin: EdgeInsets.symmetric(horizontal: 10),
-                          contentPadding: EdgeInsets.only(
+                          buttonMargin: const EdgeInsets.symmetric(horizontal: 10),
+                          contentPadding: const EdgeInsets.only(
                               top: 5, bottom: 10, left: 18, right: 18),
                           height: 40.h,
                           backgroundColor: ColorManager.primary,
                           unselectedBackgroundColor: Colors.white,
-                          unselectedLabelStyle: TextStyle(color: Colors.black),
+                          unselectedLabelStyle: const TextStyle(color: Colors.black),
                           borderWidth: 1,
                           borderColor: ColorManager.primary,
                           labelStyle: getBoldStyle(
@@ -149,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   padding: const EdgeInsets.only(top: 10),
                                   child: GridView.builder(
                                       gridDelegate:
-                                          SliverGridDelegateWithFixedCrossAxisCount(
+                                          const SliverGridDelegateWithFixedCrossAxisCount(
                                         crossAxisCount: 2,
                                         mainAxisSpacing: 10,
                                         crossAxisSpacing: 10,
@@ -162,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen>
                                             onTap: () {
                                               RouterClass.routerClass
                                                   .pushWidgetReplacement(
-                                                      ProductDetails());
+                                                      const ProductDetails());
                                             },
                                             child: ProductHomeWidget());
                                       }),
@@ -173,7 +170,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   padding: const EdgeInsets.only(top: 10),
                                   child: GridView.builder(
                                       gridDelegate:
-                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
                                         crossAxisCount: 2,
                                         mainAxisSpacing: 10,
                                         crossAxisSpacing: 10,
@@ -186,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen>
                                             onTap: () {
                                               RouterClass.routerClass
                                                   .pushWidgetReplacement(
-                                                  ProductDetails());
+                                                  const ProductDetails());
                                             },
                                             child: ProductHomeWidget());
                                       }),
@@ -197,12 +194,12 @@ class _HomeScreenState extends State<HomeScreen>
                                   padding: const EdgeInsets.only(top: 10),
                                   child: Column(
                                     children: [
-                                      Text('باقي على انتهاء العروض  1 يوم و 12 ساعة و 8 دقائق'),
+                                      const Text('باقي على انتهاء العروض  1 يوم و 12 ساعة و 8 دقائق'),
                                       SizedBox(height: 8.h,),
                                       Expanded(
                                         child: GridView.builder(
                                             gridDelegate:
-                                            SliverGridDelegateWithFixedCrossAxisCount(
+                                            const SliverGridDelegateWithFixedCrossAxisCount(
                                               crossAxisCount: 2,
                                               mainAxisSpacing: 10,
                                               crossAxisSpacing: 10,
@@ -215,7 +212,7 @@ class _HomeScreenState extends State<HomeScreen>
                                                   onTap: () {
                                                     RouterClass.routerClass
                                                         .pushWidgetReplacement(
-                                                        ProductDetails());
+                                                        const ProductDetails());
                                                   },
                                                   child: ProductHomeWidget());
                                             }),
