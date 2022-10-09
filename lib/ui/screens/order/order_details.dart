@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -66,9 +67,9 @@ class OrderDetails extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'المبلغ الإجمالي ',
+                      'totalAmount',
                       style: getMediumStyle(color: ColorManager.red, fontSize: 13),
-                    ),
+                    ).tr(),
                     Text(
                       '600',
                       style: getMediumStyle(color: ColorManager.red, fontSize: 13),

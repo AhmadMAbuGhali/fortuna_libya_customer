@@ -1,6 +1,7 @@
 
 import 'dart:async';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fortuna_libya_customer/navigator/router_class.dart';
@@ -42,21 +43,26 @@ class NewPassword extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'قم بإدخال كلمة مرور جديدة',
+                    'secretCode',
+                    style: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s18),
+                  ).tr(),
+                  SizedBox(height: 21.h),
+                  Text(
+                    'newPassword',
                     style: getMediumStyle(color: ColorManager.otpDesc, fontSize: FontSize.s14),
-                  ),
+                  ).tr(),
                   SizedBox(height: 8.h),
                   CustomTextFeild(
                     controller: provider.forgetEmailController,
-                    hintText: 'أدخل البريد الإلكتروني',
+                    hintText: 'typeEmail'.tr(),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'البريد الإلكتروني مطلوب ';
+                        return 'emailEmpty'.tr();
                       }
                       return null;
                     },
                     textInputAction: TextInputAction.next,
-                    keyboardType: TextInputType.name, label: 'البريد الإلكتروني',
+                    keyboardType: TextInputType.name, label: 'email'.tr(),
                   ),
 
 
@@ -69,12 +75,12 @@ class NewPassword extends StatelessWidget {
                         width: double.infinity,
                         height: 44.h,
                         child: ElevatedButton(onPressed: (){
-                          showCustomDialog(context,'assets/animation/successTick.json','تم تغيير كلمة المرور');
+                          showCustomDialog(context,'assets/animation/successTick.json','changePassDone'.tr());
                           Timer(const Duration(seconds: 3), () {
                             RouterClass.routerClass.navigateTo(NavegatorConstant.login);
                           });
 
-                        }, child: Text('تأكيد',style: getMediumStyle(color: ColorManager.white,fontSize: FontSize.s16),))),
+                        }, child: Text('confirm',style: getMediumStyle(color: ColorManager.white,fontSize: FontSize.s16),).tr())),
                   ),
 
                 ]),

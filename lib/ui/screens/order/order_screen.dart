@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -99,7 +100,7 @@ class _OrderScreenState extends State<OrderScreen>
                       borderRadius: BorderRadius.circular(10.0)),
                   contentPadding: const EdgeInsets.symmetric(
                       vertical: 10.0, horizontal: 10.0),
-                  hintText: "إبحث عن طلبية",
+                  hintText: "searchOrder".tr(),
                 ),
               ),
               SizedBox(height: 10.h,),
@@ -134,13 +135,13 @@ class _OrderScreenState extends State<OrderScreen>
                         borderColor: ColorManager.primary,
                         labelStyle: getBoldStyle(
                             color: ColorManager.white, fontSize: 18),
-                        tabs: const [
+                        tabs:  [
                           Tab(
-                            text: "الطلبات النشطة",
+                            text: "activeOrder".tr(),
                             height: 70,
                           ),
                           Tab(
-                            text: "سجل الطلبات",
+                            text: "orderHistory".tr(),
                           ),
                         ],
                       ),

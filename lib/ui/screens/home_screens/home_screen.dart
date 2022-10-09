@@ -1,4 +1,5 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,6 +10,7 @@ import 'package:fortuna_libya_customer/ui/general_component/drawar_widget.dart';
 import 'package:fortuna_libya_customer/ui/screens/favourite/favourite_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/limit_offer/limited_offer.dart';
 import 'package:fortuna_libya_customer/ui/screens/order/order_screen.dart';
+import 'package:fortuna_libya_customer/ui/screens/product/product%20item_2.dart';
 import 'package:fortuna_libya_customer/ui/screens/product/product_details.dart';
 import 'package:fortuna_libya_customer/ui/screens/profile/profile_screen.dart';
 
@@ -57,7 +59,6 @@ class _HomeScreenState extends State<HomeScreen>
     final scaffoldKey = GlobalKey<ScaffoldState>();
     return SafeArea(
       child: Scaffold(
-        backgroundColor: ColorManager.backGround,
         key: scaffoldKey,
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
@@ -77,9 +78,9 @@ class _HomeScreenState extends State<HomeScreen>
                 color: ColorManager.black,
               )),
           title: Text(
-            'الرئيسية',
+            'home',
             style: getBoldStyle(color: ColorManager.black),
-          ),
+          ).tr(),
           centerTitle: true,
           actions: [
             IconButton(
@@ -104,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen>
                       borderRadius: BorderRadius.circular(10.0)),
                   contentPadding: const EdgeInsets.symmetric(
                       vertical: 10.0, horizontal: 10.0),
-                  hintText: "إبحث عن منتح",
+                  hintText: "searchProduct".tr(),
                 ),
               ),
               //tab bar
@@ -127,53 +128,22 @@ class _HomeScreenState extends State<HomeScreen>
                           borderColor: ColorManager.primary,
                           labelStyle: getBoldStyle(
                               color: ColorManager.white, fontSize: 18),
-                          tabs: const [
+                          tabs:  [
                             Tab(
-                              text: "العروض",
+                              text: "product".tr(),
                               height: 70,
                             ),
                             Tab(
-                              text: "الجديد",
+                              text: "new".tr(),
                             ),
                             Tab(
-                              text: "المنتجات",
+                              text: "offer".tr(),
                             ),
                           ],
                         ),
                         Expanded(
                           child: TabBarView(
                             children: <Widget>[
-                              Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 10),
-                                  child: Column(
-                                    children: [
-                                      Text('باقي على انتهاء العروض  1 يوم و 12 ساعة و 8 دقائق'),
-                                      SizedBox(height: 8.h,),
-                                      Expanded(
-                                        child: GridView.builder(
-                                            gridDelegate:
-                                                const SliverGridDelegateWithFixedCrossAxisCount(
-                                              crossAxisCount: 2,
-                                              mainAxisSpacing: 10,
-                                              crossAxisSpacing: 10,
-                                              // width / height: fixed for *all* items
-                                              childAspectRatio: 0.87,
-                                            ),
-                                            itemBuilder: (context, index) {
-                                              return GestureDetector(
-                                                  onTap: () {
-                                                    RouterClass.routerClass
-                                                        .pushWidgetReplacement(
-                                                            ProductDetails());
-                                                  },
-                                                  child: ProducerItem());
-                                            }),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
                               Center(
                                 child: Padding(
                                   padding: const EdgeInsets.only(top: 10),
@@ -194,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen>
                                                   .pushWidgetReplacement(
                                                       ProductDetails());
                                             },
-                                            child: ProducerItem());
+                                            child: ProductHomeWidget());
                                       }),
                                 ),
                               ),
@@ -203,23 +173,55 @@ class _HomeScreenState extends State<HomeScreen>
                                   padding: const EdgeInsets.only(top: 10),
                                   child: GridView.builder(
                                       gridDelegate:
-                                          SliverGridDelegateWithFixedCrossAxisCount(
+                                      SliverGridDelegateWithFixedCrossAxisCount(
                                         crossAxisCount: 2,
                                         mainAxisSpacing: 10,
                                         crossAxisSpacing: 10,
                                         // width / height: fixed for *all* items
                                         childAspectRatio: 0.87,
                                       ),
+                                      itemCount: 12,
                                       itemBuilder: (context, index) {
                                         return GestureDetector(
-                                          child: ProducerItem(),
-                                          onTap: () {
-                                            RouterClass.routerClass
-                                                .pushWidgetReplacement(
-                                                    ProductDetails());
-                                          },
-                                        );
+                                            onTap: () {
+                                              RouterClass.routerClass
+                                                  .pushWidgetReplacement(
+                                                  ProductDetails());
+                                            },
+                                            child: ProductHomeWidget());
                                       }),
+                                ),
+                              ),
+                              Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(top: 10),
+                                  child: Column(
+                                    children: [
+                                      Text('باقي على انتهاء العروض  1 يوم و 12 ساعة و 8 دقائق'),
+                                      SizedBox(height: 8.h,),
+                                      Expanded(
+                                        child: GridView.builder(
+                                            gridDelegate:
+                                            SliverGridDelegateWithFixedCrossAxisCount(
+                                              crossAxisCount: 2,
+                                              mainAxisSpacing: 10,
+                                              crossAxisSpacing: 10,
+                                              // width / height: fixed for *all* items
+                                              childAspectRatio: 0.87,
+                                            ),
+                                            itemCount: 12,
+                                            itemBuilder: (context, index) {
+                                              return GestureDetector(
+                                                  onTap: () {
+                                                    RouterClass.routerClass
+                                                        .pushWidgetReplacement(
+                                                        ProductDetails());
+                                                  },
+                                                  child: ProductHomeWidget());
+                                            }),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],

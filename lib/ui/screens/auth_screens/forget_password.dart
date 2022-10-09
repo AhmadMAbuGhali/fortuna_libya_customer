@@ -41,21 +41,21 @@ class ForgetPassword extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'إسترجاع كلمة المرور',
+                    'passwordRecovery',
                     style: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s18),
-                  ),
+                  ).tr(),
                   SizedBox(height: 8.h),
                   CustomTextFeild(
                     controller: provider.forgetEmailController,
-                    hintText: 'أدخل البريد الإلكتروني',
+                    hintText: 'typeEmail'.tr(),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'البريد الإلكتروني مطلوب ';
+                        return 'emailEmpty'.tr();
                       }
                       return null;
                     },
                     textInputAction: TextInputAction.next,
-                    keyboardType: TextInputType.name, label: 'البريد الإلكتروني',
+                    keyboardType: TextInputType.name, label: 'email'.tr(),
                   ),
 
 
@@ -69,7 +69,7 @@ class ForgetPassword extends StatelessWidget {
                         height: 44.h,
                         child: ElevatedButton(onPressed: (){
                           RouterClass.routerClass.navigateTo(NavegatorConstant.otp);
-                        }, child: Text('إرسال',style: getMediumStyle(color: ColorManager.white,fontSize: FontSize.s16),))),
+                        }, child: Text('send',style: getMediumStyle(color: ColorManager.white,fontSize: FontSize.s16),).tr())),
                   ),
 
                 ]),

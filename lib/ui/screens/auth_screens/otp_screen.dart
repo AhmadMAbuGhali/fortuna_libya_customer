@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fortuna_libya_customer/navigator/router_class.dart';
@@ -37,14 +38,14 @@ class OTPScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'الرمز السري',
+                  'secretCode',
                   style: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s18),
-                ),
+                ).tr(),
                 SizedBox(height: 21.h),
                   Text(
-                    'قم بإدخال الرمز الذي وصل لإيميلك',
+                    'enterCode',
                     style: getMediumStyle(color: ColorManager.otpDesc, fontSize: FontSize.s14),
-                  ),
+                  ).tr(),
                   SizedBox(height: 40.h),
                   Padding(
                     padding:   EdgeInsets.symmetric(horizontal: 20.w),
@@ -78,10 +79,10 @@ class OTPScreen extends StatelessWidget {
                       RouterClass.routerClass.navigateTo(NavegatorConstant.createNewPassword);
                     },
                         child:provider.isLoading?Row(children: [
-                          Text('تأكيد', style: getMediumStyle(color: ColorManager.white, fontSize: FontSize.s18.sp)),
+                          Text('confirm', style: getMediumStyle(color: ColorManager.white, fontSize: FontSize.s18.sp)).tr(),
                           SizedBox(width: 10.w,),
                           CircularProgressIndicator(color: ColorManager.white)
-                        ],):Text('تأكيد', style: getMediumStyle(color: ColorManager.white, fontSize: FontSize.s18.sp))
+                        ],):Text('confirm', style: getMediumStyle(color: ColorManager.white, fontSize: FontSize.s18.sp)).tr()
                     ),
                   ),
                 ],),
