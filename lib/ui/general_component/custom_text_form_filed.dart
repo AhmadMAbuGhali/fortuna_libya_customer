@@ -24,7 +24,7 @@ class CustomTextFeild extends StatelessWidget {
   final Widget? suffixIcon;
   final TextInputAction? textInputAction;
   final String label;
-    bool? obscureText=false;
+  bool? obscureText=false;
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(375, 812));
