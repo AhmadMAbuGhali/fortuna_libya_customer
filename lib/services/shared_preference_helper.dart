@@ -14,21 +14,7 @@ class SharedPreferenceHelper {
     final userToken = prefs.getString(token);
     return userToken;
   }
-  Future<void> setUserName({required String userName1}) async {
-    await prefs.setString(userName, userName1);
-  }
-  String? getUsereName() {
-    final userName1 = prefs.getString(userName);
-    return userName1;
-  }
 
-  Future<void> setUserPassword({required String password1}) async {
-    await prefs.setString(passWord, password1);
-  }
-  String? getUserPassword() {
-    final userPassWord = prefs.getString(passWord);
-    return userPassWord;
-  }
   Future<void> setIsLogin({required bool isLogint}) async {
     await prefs.setBool(isLogin, isLogint);
   }

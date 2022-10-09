@@ -7,12 +7,7 @@ import 'package:fortuna_libya_customer/navigator/routes_const.dart';
 import 'package:fortuna_libya_customer/resources/assets_manager.dart';
 import 'package:fortuna_libya_customer/resources/color_manager.dart';
 import 'package:fortuna_libya_customer/resources/styles_manager.dart';
-import 'package:fortuna_libya_customer/ui/screens/home_screens/home_screen.dart';
-import 'package:fortuna_libya_customer/ui/screens/limit_offer/limited_offer.dart';
-import 'package:fortuna_libya_customer/ui/screens/order/order_screen.dart';
-import 'package:fortuna_libya_customer/ui/screens/point/point_screen.dart';
-import 'package:fortuna_libya_customer/ui/screens/profile/profile_screen.dart';
-import '../screens/favourite/favourite_screen.dart';
+
 class DrawarWidget extends StatelessWidget  {
     DrawarWidget({Key? key,required this.function}) : super(key: key);
     VoidCallback function;
@@ -97,8 +92,9 @@ class DrawarWidget extends StatelessWidget  {
                       //home
                       GestureDetector(
                         onTap: () {
+                          function();
                           RouterClass.routerClass
-                              .navigateTo(NavegatorConstant.homeApp);
+                              .navigateToAndRemove(NavegatorConstant.homeApp);
                         },
                         child: Row(
                           children: [

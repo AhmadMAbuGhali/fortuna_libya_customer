@@ -54,15 +54,16 @@ class NewPassword extends StatelessWidget {
                   SizedBox(height: 8.h),
                   CustomTextFeild(
                     controller: provider.forgetEmailController,
-                    hintText: 'typeEmail'.tr(),
+                    hintText: 'typePassword'.tr(),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'emailEmpty'.tr();
+                        return 'passwordEmpty'.tr();
                       }
                       return null;
                     },
+                    obscureText: true,
                     textInputAction: TextInputAction.next,
-                    keyboardType: TextInputType.name, label: 'email'.tr(),
+                    keyboardType: TextInputType.visiblePassword, label: 'password'.tr(),
                   ),
 
 

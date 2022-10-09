@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget{
   Widget build(BuildContext context) {
 
     Timer(const Duration(seconds: 3), () async {
-      RouterClass.routerClass.navigateToAndRemove(NavegatorConstant.onBoarding);
+      RouterClass.routerClass.navigateToAndRemove(NavegatorConstant.language);
     });
     return SafeArea(
       child: Scaffold(

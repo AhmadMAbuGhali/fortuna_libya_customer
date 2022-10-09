@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fortuna_libya_customer/navigator/routes_const.dart';
 import 'package:fortuna_libya_customer/services/auth_provider.dart';
 import 'package:fortuna_libya_customer/ui/screens/auth_screens/forget_password.dart';
+import 'package:fortuna_libya_customer/ui/screens/auth_screens/langauge_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/auth_screens/login_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/auth_screens/new_password_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/auth_screens/on_bording_screen.dart';
@@ -30,6 +31,13 @@ class RouterX {
           builder: (_) => ChangeNotifierProvider(
             create: (context) => AuthProvider(),
             child:   SplashScreen(),
+          ),
+        );
+        case NavegatorConstant.language:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child:   const LangaugeScreen(),
           ),
         );
       case NavegatorConstant.login:
@@ -77,7 +85,7 @@ class RouterX {
         return MaterialPageRoute(
           builder: (_) => ChangeNotifierProvider(
             create: (context) => AuthProvider(),
-            child: CartScreen(),
+            child: const CartScreen(),
           ),
         );
 
@@ -85,7 +93,7 @@ class RouterX {
         return MaterialPageRoute(
           builder: (_) => ChangeNotifierProvider(
             create: (context) => AuthProvider(),
-            child: PointScreen(),
+            child: const PointScreen(),
           ),
         );
       case NavegatorConstant.favourite:
@@ -106,7 +114,7 @@ class RouterX {
         return MaterialPageRoute(
           builder: (_) => ChangeNotifierProvider(
             create: (context) => AuthProvider(),
-            child: ProductDetails(),
+            child: const ProductDetails(),
           ),
         );
       case NavegatorConstant.limitedOffer:
@@ -120,14 +128,14 @@ class RouterX {
         return MaterialPageRoute(
           builder: (_) => ChangeNotifierProvider(
             create: (context) => AuthProvider(),
-            child: ProfileScreen(),
+            child: const ProfileScreen(),
           ),
         );
         case NavegatorConstant.support:
         return MaterialPageRoute(
           builder: (_) => ChangeNotifierProvider(
             create: (context) => AuthProvider(),
-            child: SupportScreen(),
+            child: const SupportScreen(),
           ),
         );
 

@@ -3,6 +3,7 @@ class NavegatorConstant {
   static const String splash = '/splash';
   static const String onBoarding = '/onBoarding';
   static const String noInterNet = '/noInterNet';
+  static const String language = '/language';
   static const String login = '/login';
   static const String signUp = '/signUp';
   static const String signUp2 = '/signUp2';

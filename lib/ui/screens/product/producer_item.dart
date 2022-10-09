@@ -72,6 +72,7 @@ class ProducerItem extends StatelessWidget {
             ),
           ),
           Positioned(
+            bottom: 90,
             child: CircleAvatar(
               radius: 50,
               backgroundColor: Colors.transparent,
@@ -80,7 +81,6 @@ class ProducerItem extends StatelessWidget {
                 fit: BoxFit.fitHeight,
               ),
             ),
-            bottom: 90,
           )
         ],
       ),
