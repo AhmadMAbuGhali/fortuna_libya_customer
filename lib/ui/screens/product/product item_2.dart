@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fortuna_libya_customer/navigator/router_class.dart';
+import 'package:fortuna_libya_customer/navigator/routes_const.dart';
 import 'package:fortuna_libya_customer/resources/assets_manager.dart';
-
 import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
 
-class ProductHomeWidget extends StatelessWidget {
+class ProductHomeWidget extends StatelessWidget{
   const ProductHomeWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
-  
     return GestureDetector(
       onTap: (){
-       
+       RouterClass.routerClass.navigateTo(NavegatorConstant.productDetails);
       },
       child: Container(
         width: 155.5.w,
@@ -62,9 +63,7 @@ class ProductHomeWidget extends StatelessWidget {
                 Text(
                   '60',
                   style: getBoldStyle(color: ColorManager.green),
-                  
                 ),
-
                 Icon(Icons.favorite,color: ColorManager.red,)
               ],
             )
