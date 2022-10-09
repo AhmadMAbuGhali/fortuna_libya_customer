@@ -119,6 +119,7 @@ class DrawarWidget extends StatelessWidget  {
                       //profile
                       GestureDetector(
                         onTap: () {
+                          function();
                           RouterClass.routerClass
                               .navigateTo(NavegatorConstant.profile);
 
@@ -146,6 +147,7 @@ class DrawarWidget extends StatelessWidget  {
                       //order
                       GestureDetector(
                         onTap: (){
+                          function();
                           RouterClass.routerClass
                               .navigateTo(NavegatorConstant.order);
 
@@ -175,6 +177,7 @@ class DrawarWidget extends StatelessWidget  {
                       //limit
                       GestureDetector(
                         onTap: (){
+                          function();
                           RouterClass.routerClass
                               .navigateTo(NavegatorConstant.limitedOffer);
 
@@ -253,6 +256,7 @@ class DrawarWidget extends StatelessWidget  {
                       //favorite
                       GestureDetector(
                         onTap: (){
+                          function();
                           RouterClass.routerClass
                               .navigateTo(NavegatorConstant.favourite);
 
@@ -281,6 +285,7 @@ class DrawarWidget extends StatelessWidget  {
                       // point
                       GestureDetector(
                         onTap: (){
+                          function();
                           RouterClass.routerClass
                               .navigateTo(NavegatorConstant.point);
                         },
@@ -366,6 +371,7 @@ class DrawarWidget extends StatelessWidget  {
                       //support
                       GestureDetector(
                         onTap: (){
+                          function();
                           RouterClass.routerClass
                               .navigateTo(NavegatorConstant.support);
 
