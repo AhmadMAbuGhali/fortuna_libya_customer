@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -146,10 +147,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                           width: 20,
                         ),
                         Text(
-                          'إضافة الى السلة',
+                          'addCart',
                           style: getBoldStyle(
                               color: ColorManager.white, fontSize: 16),
-                        )
+                        ).tr()
                       ],
                     ),
                   ),
@@ -177,15 +178,15 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 ),
                           isFav == false
                               ? Text(
-                                  'إضافة الى المفضلة',
+                                  'addFav',
                                   style: getBoldStyle(
                                       color: ColorManager.black, fontSize: 16),
-                                )
+                                ).tr()
                               : Text(
-                                  'إزالة من المفضلة',
+                                  'removeFav',
                                   style: getBoldStyle(
                                       color: ColorManager.black, fontSize: 16),
-                                ),
+                                ).tr(),
                         ],
                       ),
                     ),

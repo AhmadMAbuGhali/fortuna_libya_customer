@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -80,7 +81,7 @@ class _PointScreenState extends State<PointScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(14.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -96,10 +97,10 @@ class _PointScreenState extends State<PointScreen> {
                                 width: 15.w,
                               ),
                               Text(
-                                'رصيد النقاط ',
+                                'pointsBalance',
                                 style: getBoldStyle(
                                     color: ColorManager.white, fontSize: 20),
-                              )
+                              ).tr()
                             ],
                           ),
                           Row(
@@ -110,17 +111,17 @@ class _PointScreenState extends State<PointScreen> {
                                     color: ColorManager.white, fontSize: 21),
                               ),
                               Text(
-                                'نقطة ',
+                                'point ',
                                 style: getBoldStyle(
                                     color: ColorManager.white, fontSize: 21),
-                              )
+                              ).tr()
                             ],
                           ),
                           Text(
-                            'يتم تصفير النقاط في بداية كل شهر فردي ',
+                            'zeroingPoint',
                             style: getBoldStyle(
                                 color: ColorManager.white, fontSize: 12),
-                          )
+                          ).tr()
                         ],
                       ),
                     ),
@@ -135,9 +136,9 @@ class _PointScreenState extends State<PointScreen> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  'يمكنك الإستفادة من النقاط بعد 243 نقطة إضافية',
+                  'pointUse',
                   style: getBoldStyle(color: ColorManager.red, fontSize: 14),
-                ),
+                ).tr(),
               ),
               SizedBox(
                 height: 40.h,
@@ -162,9 +163,9 @@ class _PointScreenState extends State<PointScreen> {
                 ),
                 child: Center(
                     child: Text(
-                  'يتم احتساب نقطة لكل 100 دينار',
+                  'pointCounting',
                   style: getBoldStyle(color: ColorManager.white, fontSize: 22),
-                )),
+                ).tr()),
               ),
               SizedBox(
                 height: 30.h,
@@ -183,10 +184,10 @@ class _PointScreenState extends State<PointScreen> {
                       width: 15.w,
                     ),
                     Text(
-                      'سجل النقاط لكل عملية شراء',
+                      'pointHistory',
                       style:
                           getBoldStyle(color: ColorManager.black, fontSize: 20),
-                    )
+                    ).tr()
                   ],
                 ),
               ),
@@ -201,9 +202,9 @@ class _PointScreenState extends State<PointScreen> {
                     children: [
                       SvgPicture.asset(IconAssets.plus),
                       SizedBox(width: 16.w,),
-                      Text('شراء طلبية بمبلغ 4500 ',style: getBoldStyle(color: ColorManager.black,fontSize: 16),),
+                      Text('pointHistoryLine',style: getBoldStyle(color: ColorManager.black,fontSize: 16),).tr(),
                       Spacer(),
-                      
+
                       Padding(
                         padding: const EdgeInsets.only(left: 8.0),
                         child: Text('+45',style: getBoldStyle(color: ColorManager.green,fontSize: 16),),

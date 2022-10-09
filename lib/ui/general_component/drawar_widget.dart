@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -54,10 +55,10 @@ class DrawarWidget extends StatelessWidget  {
               height: 12.h,
             ),
             Text(
-              'المبلغ المدين',
+              'deservedAmount',
               style:
               getRegularStyle(color: ColorManager.black, fontSize: 19),
-            ),
+            ).tr(),
             SizedBox(
               height: 12.h,
             ),
@@ -109,10 +110,10 @@ class DrawarWidget extends StatelessWidget  {
                               width: 30.w,
                             ),
                             Text(
-                              " الرئيسية",
+                              "home",
                               style: getBoldStyle(
                                   color: ColorManager.black, fontSize: 18),
-                            ),
+                            ).tr(),
                           ],
                         ),
                       ),
@@ -136,10 +137,10 @@ class DrawarWidget extends StatelessWidget  {
                               width: 30.w,
                             ),
                             Text(
-                              " الملف الشخصي",
+                              "profile",
                               style: getBoldStyle(
                                   color: ColorManager.black, fontSize: 18),
-                            ),
+                            ).tr(),
                           ],
                         ),
                       ),
@@ -165,10 +166,10 @@ class DrawarWidget extends StatelessWidget  {
                               width: 30.w,
                             ),
                             Text(
-                              " الطلبات",
+                              "order",
                               style: getBoldStyle(
                                   color: ColorManager.black, fontSize: 18),
-                            ),
+                            ).tr(),
                           ],
                         ),
                       ),
@@ -194,10 +195,10 @@ class DrawarWidget extends StatelessWidget  {
                               width: 30.w,
                             ),
                             Text(
-                              "الكمية المحدودة",
+                              "limitedProduct",
                               style: getBoldStyle(
                                   color: ColorManager.black, fontSize: 18),
-                            ),
+                            ).tr(),
                           ],
                         ),
                       ),
@@ -244,10 +245,10 @@ class DrawarWidget extends StatelessWidget  {
                             width: 30.w,
                           ),
                           Text(
-                            " الإشعارات",
+                            "notifications",
                             style: getBoldStyle(
                                 color: ColorManager.black, fontSize: 18),
-                          ),
+                          ).tr(),
                         ],
                       ),
                       SizedBox(
@@ -271,10 +272,10 @@ class DrawarWidget extends StatelessWidget  {
                               width: 30.w,
                             ),
                             Text(
-                              "المفضلة",
+                              "Fav",
                               style: getBoldStyle(
                                   color: ColorManager.black, fontSize: 18),
-                            ),
+                            ).tr(),
                           ],
                         ),
                       ),
@@ -299,10 +300,10 @@ class DrawarWidget extends StatelessWidget  {
                               width: 30.w,
                             ),
                             Text(
-                              "  النقاط",
+                              "points",
                               style: getBoldStyle(
                                   color: ColorManager.black, fontSize: 18),
-                            ),
+                            ).tr(),
                           ],
                         ),
                       ),
@@ -318,10 +319,10 @@ class DrawarWidget extends StatelessWidget  {
                               color: Colors.black,
                             ),
                             title: Text(
-                              'اللغة',
+                              'Lang',
                               style: getBoldStyle(
                                   color: ColorManager.black, fontSize: 18),
-                            ),
+                            ).tr(),
                             tilePadding: const EdgeInsets.all(-5),
                             children: [
                               Align(
@@ -383,10 +384,10 @@ class DrawarWidget extends StatelessWidget  {
                               width: 30.w,
                             ),
                             Text(
-                              " الدعم الفني",
+                              "support",
                               style: getBoldStyle(
                                   color: ColorManager.black, fontSize: 18),
-                            ),
+                            ).tr(),
                           ],
                         ),
                       ),
@@ -406,10 +407,10 @@ class DrawarWidget extends StatelessWidget  {
                             width: 30.w,
                           ),
                           Text(
-                            " تسجيل الخروج",
+                            "logout",
                             style: getBoldStyle(
                                 color: ColorManager.black, fontSize: 18),
-                          ),
+                          ).tr(),
                         ],
                       ),
                     ],

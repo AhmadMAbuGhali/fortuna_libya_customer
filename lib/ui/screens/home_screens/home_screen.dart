@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen>
                 color: ColorManager.black,
               )),
           title: Text(
-            'Home',
+            'home',
             style: getBoldStyle(color: ColorManager.black),
           ).tr(),
           centerTitle: true,
@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen>
                       borderRadius: BorderRadius.circular(10.0)),
                   contentPadding: const EdgeInsets.symmetric(
                       vertical: 10.0, horizontal: 10.0),
-                  hintText: "إبحث عن منتح",
+                  hintText: "searchProduct".tr(),
                 ),
               ),
               //tab bar
@@ -128,54 +128,22 @@ class _HomeScreenState extends State<HomeScreen>
                           borderColor: ColorManager.primary,
                           labelStyle: getBoldStyle(
                               color: ColorManager.white, fontSize: 18),
-                          tabs: const [
+                          tabs:  [
                             Tab(
-                              text: "العروض",
+                              text: "product".tr(),
                               height: 70,
                             ),
                             Tab(
-                              text: "الجديد",
+                              text: "new".tr(),
                             ),
                             Tab(
-                              text: "المنتجات",
+                              text: "offer".tr(),
                             ),
                           ],
                         ),
                         Expanded(
                           child: TabBarView(
                             children: <Widget>[
-                              Center(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(top: 10),
-                                  child: Column(
-                                    children: [
-                                      Text('باقي على انتهاء العروض  1 يوم و 12 ساعة و 8 دقائق'),
-                                      SizedBox(height: 8.h,),
-                                      Expanded(
-                                        child: GridView.builder(
-                                            gridDelegate:
-                                            SliverGridDelegateWithFixedCrossAxisCount(
-                                              crossAxisCount: 2,
-                                              mainAxisSpacing: 10,
-                                              crossAxisSpacing: 10,
-                                              // width / height: fixed for *all* items
-                                              childAspectRatio: 0.87,
-                                            ),
-                                            itemCount: 12,
-                                            itemBuilder: (context, index) {
-                                              return GestureDetector(
-                                                  onTap: () {
-                                                    RouterClass.routerClass
-                                                        .pushWidgetReplacement(
-                                                        ProductDetails());
-                                                  },
-                                                  child: ProductHomeWidget());
-                                            }),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
                               Center(
                                 child: Padding(
                                   padding: const EdgeInsets.only(top: 10),
@@ -222,6 +190,38 @@ class _HomeScreenState extends State<HomeScreen>
                                             },
                                             child: ProductHomeWidget());
                                       }),
+                                ),
+                              ),
+                              Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(top: 10),
+                                  child: Column(
+                                    children: [
+                                      Text('باقي على انتهاء العروض  1 يوم و 12 ساعة و 8 دقائق'),
+                                      SizedBox(height: 8.h,),
+                                      Expanded(
+                                        child: GridView.builder(
+                                            gridDelegate:
+                                            SliverGridDelegateWithFixedCrossAxisCount(
+                                              crossAxisCount: 2,
+                                              mainAxisSpacing: 10,
+                                              crossAxisSpacing: 10,
+                                              // width / height: fixed for *all* items
+                                              childAspectRatio: 0.87,
+                                            ),
+                                            itemCount: 12,
+                                            itemBuilder: (context, index) {
+                                              return GestureDetector(
+                                                  onTap: () {
+                                                    RouterClass.routerClass
+                                                        .pushWidgetReplacement(
+                                                        ProductDetails());
+                                                  },
+                                                  child: ProductHomeWidget());
+                                            }),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],

@@ -1,4 +1,5 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,16 +40,16 @@ class SignUpScreen2 extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'انشاء حساب',
+                    'createAccount',
                     style: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s18),
-                  ),
+                  ).tr(),
                   Row(
                     children: [
                       SizedBox(width: 16.w,),
                       Text(
-                        'المدينة',
+                        'city',
                         style: getMediumStyle(color: ColorManager.black, fontSize: FontSize.s16),
-                      ),
+                      ).tr(),
                      const Spacer()
                     ],
                   ),
@@ -107,27 +108,27 @@ class SignUpScreen2 extends StatelessWidget {
                   // ),
             CustomTextFeild(
               controller: provider.forgetEmailController,
-              hintText: 'أدخل البريد الإلكتروني',
+              hintText: 'typeAddress'.tr(),
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'البريد الإلكتروني مطلوب ';
+                  return 'addressEmpty'.tr();
                 }
                 return null;
               },
               textInputAction: TextInputAction.next,
-              keyboardType: TextInputType.name, label: 'البريد الإلكتروني',
+              keyboardType: TextInputType.name, label: 'address'.tr(),
             ),
                   CustomTextFeild(
                     controller: provider.forgetEmailController,
-                    hintText: 'أدخل البريد الإلكتروني',
+                    hintText: 'typePassword'.tr(),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'البريد الإلكتروني مطلوب ';
+                        return 'passwordEmpty ';
                       }
                       return null;
                     },
                     textInputAction: TextInputAction.next,
-                    keyboardType: TextInputType.name, label: 'البريد الإلكتروني',
+                    keyboardType: TextInputType.name, label: 'password'.tr(),
                   ),
                   SizedBox(
                     height: 14.h,
@@ -140,7 +141,7 @@ class SignUpScreen2 extends StatelessWidget {
                         child: ElevatedButton(onPressed: (){
                           RouterClass.routerClass
                               .navigateTo(NavegatorConstant.homeApp);
-                        }, child: Text('انشاء حساب',style: getMediumStyle(color: ColorManager.white,fontSize: FontSize.s16),))),
+                        }, child: Text('createAccount',style: getMediumStyle(color: ColorManager.white,fontSize: FontSize.s16),).tr())),
                   ),
                   SizedBox(
                     height: 16.h,
@@ -149,10 +150,10 @@ class SignUpScreen2 extends StatelessWidget {
                     text: TextSpan(
                       children: <TextSpan>[
                         TextSpan(
-                            text: ' لديك حساب ؟',
+                            text: 'haveAccount'.tr(),
                             style: getRegularStyle(color: ColorManager.primary,fontSize: FontSize.s14)),
                         TextSpan(
-                            text: 'تسجيل الدخول',
+                            text: 'sLogin'.tr(),
                             style: getBoldStyle(color:ColorManager.primary,fontSize: FontSize.s14),
                             recognizer:  TapGestureRecognizer()..onTap = () => RouterClass.routerClass.navigateToAndRemove(NavegatorConstant.login)
                         ),

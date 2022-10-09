@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fortuna_libya_customer/navigator/router_class.dart';
 import 'package:fortuna_libya_customer/resources/assets_manager.dart';
@@ -11,7 +12,7 @@ class ActiveOrder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      elevation: 1,
+      elevation: 2,
       child: Container(
         height: 100,
         child: Row(
@@ -20,7 +21,7 @@ class ActiveOrder extends StatelessWidget {
           children: [
 
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(14.0),
               child: Container(
                 height: 72,
                 width: 72,
@@ -76,7 +77,7 @@ class ActiveOrder extends StatelessWidget {
                           )
                         ),
                         child: Center(
-                          child: Text('تتبع الطلب',style: getRegularStyle(color: ColorManager.white,fontSize: 14),),
+                          child: Text('trackOrder',style: getRegularStyle(color: ColorManager.white,fontSize: 14),).tr(),
                         )),
                   ),
                 ],

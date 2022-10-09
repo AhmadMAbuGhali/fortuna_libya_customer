@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fortuna_libya_customer/resources/assets_manager.dart';
 import 'package:fortuna_libya_customer/resources/color_manager.dart';
@@ -9,7 +10,7 @@ class OrderHistory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      elevation: 1,
+      elevation: 2,
       child: Container(
         height: 100,
         child: Row(
@@ -18,7 +19,7 @@ class OrderHistory extends StatelessWidget {
           children: [
 
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(14.0),
               child: Container(
                 height: 72,
                 width: 72,
@@ -72,7 +73,7 @@ class OrderHistory extends StatelessWidget {
                             )
                         ),
                         child: Center(
-                          child: Text('تفاصيل الطلب',style: getRegularStyle(color: ColorManager.white,fontSize: 14),),
+                          child: Text('orderDetails',style: getRegularStyle(color: ColorManager.white,fontSize: 14),).tr(),
                         )),
                   ),
                 ],

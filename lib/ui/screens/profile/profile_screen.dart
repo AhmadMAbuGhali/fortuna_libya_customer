@@ -3,15 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fortuna_libya_customer/ui/general_component/custom_text_form_filed.dart';
 import 'package:fortuna_libya_customer/ui/general_component/drawar_widget.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../../navigator/router_class.dart';
 import '../../../resources/assets_manager.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
-import '../home_screens/home_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);

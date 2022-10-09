@@ -1,4 +1,5 @@
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,33 +42,33 @@ import 'package:provider/provider.dart';
                     ),
                   ),
                   Text(
-                    'انشاء حساب',
+                    'login',
                     style: getBoldStyle(color: ColorManager.primary, fontSize: FontSize.s18),
-                  ),
+                  ).tr(),
                   SizedBox(height: 8.h),
                   CustomTextFeild(
                     controller: provider.loginEmailController,
-                    hintText: 'أدخل البريد الإلكتروني',
+                    hintText: 'typeEmail'.tr(),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'البريد الإلكتروني مطلوب ';
+                        return 'emailEmpty'.tr();
                       }
                       return null;
                     },
                     textInputAction: TextInputAction.next,
-                    keyboardType: TextInputType.name, label: 'البريد الإلكتروني',
+                    keyboardType: TextInputType.name, label: 'email'.tr(),
                   ),
                   CustomTextFeild(
                     controller:  provider.loginPasswordController,
-                    hintText: 'أدخل كلمة المرور',
+                    hintText: 'typePassword'.tr(),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'كلمة المرور مطلوبة';
+                        return 'passwordEmpty'.tr();
                       }
                       return null;
                     },
                     textInputAction: TextInputAction.next,
-                    keyboardType: TextInputType.name, label: 'كلمة المرور',
+                    keyboardType: TextInputType.name, label: 'password'.tr(),
                     obscureText: true,
                   ),
 
@@ -88,10 +89,10 @@ import 'package:provider/provider.dart';
                             },
                           ),
                         ),
-                        Text('تذكرني',
+                        Text('rememberMe',
                             style: getBoldStyle(
                                 color: ColorManager.black,
-                                fontSize: FontSize.s12.sp)), //Text
+                                fontSize: FontSize.s12.sp)).tr(), //Text
                         const Spacer(),
                         TextButton(
                           onPressed: () {
@@ -99,11 +100,11 @@ import 'package:provider/provider.dart';
                                 .navigateTo(NavegatorConstant.forgetPassword);
                           },
                           child: Text(
-                            'نسيت كلمة المرور؟',
+                            'forgotPassword',
                             style: getBoldStyle(
                                 color: ColorManager.black,
                                 fontSize: FontSize.s12.sp),
-                          ),
+                          ).tr(),
                         )
                       ],
                     ),
@@ -119,7 +120,7 @@ import 'package:provider/provider.dart';
                         child: ElevatedButton(onPressed: (){
                           RouterClass.routerClass
                               .navigateTo(NavegatorConstant.homeApp);
-                        }, child: Text('لوخدلا ليجست',style: getMediumStyle(color: ColorManager.white,fontSize: FontSize.s16),))),
+                        }, child: Text('login',style: getMediumStyle(color: ColorManager.white,fontSize: FontSize.s16),).tr())),
                   ),
                   SizedBox(
                     height: 16.h,
@@ -128,10 +129,10 @@ import 'package:provider/provider.dart';
                     text: TextSpan(
                       children: <TextSpan>[
                         TextSpan(
-                            text: 'ليس لديك حساب ؟',
+                            text: 'doNotHaveAccount'.tr(),
                             style: getRegularStyle(color: ColorManager.primary,fontSize: FontSize.s14)),
                         TextSpan(
-                          text: 'إنشاء حساب',
+                          text: 'createAccount'.tr(),
                           style: getBoldStyle(color:ColorManager.primary,fontSize: FontSize.s14),
                            recognizer:  TapGestureRecognizer()..onTap = () => RouterClass.routerClass.navigateToAndRemove(NavegatorConstant.signUp)
                         ),
