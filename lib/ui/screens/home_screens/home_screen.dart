@@ -9,7 +9,10 @@ import 'package:fortuna_libya_customer/resources/font_manager.dart';
 import 'package:fortuna_libya_customer/resources/styles_manager.dart';
 import 'package:fortuna_libya_customer/ui/general_component/drawar_widget.dart';
 import 'package:fortuna_libya_customer/ui/screens/product/product%20item_2.dart';
+import '../../../navigator/router_class.dart';
+import '../../../navigator/routes_const.dart';
 import '../../../resources/color_manager.dart';
+import '../../general_component/appbar_custom_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -48,40 +51,17 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
-    final scaffoldKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKeyHome = GlobalKey<ScaffoldState>();
     return WillPopScope(
       onWillPop: () => showExitPopup(context),
       child: SafeArea(
         child: Scaffold(
-          key: scaffoldKey,
+          key: scaffoldKeyHome,
           resizeToAvoidBottomInset: false,
-          appBar: AppBar(
-            elevation: 1,
-            leading: IconButton(
-                onPressed: () {
-                  if (scaffoldKey.currentState!.isDrawerOpen) {
-                    scaffoldKey.currentState!.closeDrawer();
-                    //close drawer, if drawer is open
-                  } else {
-                    scaffoldKey.currentState!.openDrawer();
-                    //open drawer, if drawer is closed
-                  }
-                },
-                icon: Icon(
-                  Icons.menu,
-                  color: ColorManager.black,
-                )),
-            title: Text(
-              'home',
-              style: getBoldStyle(color: ColorManager.black),
-            ).tr(),
-            centerTitle: true,
-            actions: [
-              IconButton(
-                onPressed: () {},
-                icon: SvgPicture.asset(IconAssets.cart),
-              ),
-            ],
+          appBar: AppBarWidget(
+            function: () {
+              scaffoldKeyHome.currentState?.openDrawer();
+            }, title: 'home'.tr(),
           ),
           body: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -216,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen>
           ),
 
           drawer: DrawarWidget(
-              function: () => scaffoldKey.currentState?.closeDrawer()),
+              function: () => scaffoldKeyHome.currentState?.closeDrawer()),
         ),
       ),
     );

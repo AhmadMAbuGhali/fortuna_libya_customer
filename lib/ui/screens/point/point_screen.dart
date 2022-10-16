@@ -9,6 +9,7 @@ import '../../../navigator/router_class.dart';
 import '../../../resources/assets_manager.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/styles_manager.dart';
+import '../../general_component/appbar_custom_widget.dart';
 import '../home_screens/home_screen.dart';
 import '../profile/profile_screen.dart';
 
@@ -20,41 +21,18 @@ class PointScreen extends StatefulWidget {
 }
 
 class _PointScreenState extends State<PointScreen> {
-  final scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> scaffoldKeyPoint = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        key: scaffoldKey,
-        appBar: AppBar(
-          elevation: 1,
-          leading: IconButton(
-              onPressed: () {
-                if (scaffoldKey.currentState!.isDrawerOpen) {
-                  scaffoldKey.currentState!.closeDrawer();
-                  //close drawer, if drawer is open
-                } else {
-                  scaffoldKey.currentState!.openDrawer();
-                  //open drawer, if drawer is closed
-                }
-              },
-              icon: Icon(
-                Icons.menu,
-                color: ColorManager.black,
-              )),
-          title: Text(
-            'النقاط',
-            style: getBoldStyle(color: ColorManager.black),
-          ),
-          centerTitle: true,
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset(IconAssets.cart),
-            ),
-          ],
+        key: scaffoldKeyPoint,
+        appBar: AppBarWidget(
+          function: () {
+            scaffoldKeyPoint.currentState?.openDrawer();
+          }, title: 'point'.tr(),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -200,7 +178,7 @@ class _PointScreenState extends State<PointScreen> {
                   padding: const EdgeInsets.symmetric(vertical: 9.0),
                   child: Row(
                     children: [
-                      SvgPicture.asset(IconAssets.plus),
+                      SvgPicture.asset(IconAssets.plus,color: ColorManager.primary,),
                       SizedBox(width: 16.w,),
                       Text('pointHistoryLine',style: getBoldStyle(color: ColorManager.black,fontSize: 16),).tr(),
                       Spacer(),
@@ -217,7 +195,7 @@ class _PointScreenState extends State<PointScreen> {
           ),
         ),
         drawer: DrawarWidget(
-            function: () => scaffoldKey.currentState?.closeDrawer()),
+            function: () => scaffoldKeyPoint.currentState?.closeDrawer()),
       ),
     );
   }

@@ -15,43 +15,22 @@ import 'package:fortuna_libya_customer/ui/screens/order/order_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/product/product_details.dart';
 import 'package:fortuna_libya_customer/ui/screens/profile/profile_screen.dart';
 
+import '../../general_component/appbar_custom_widget.dart';
+
 class FavouriteScreen extends StatelessWidget {
   TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final scaffoldKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKeyFavourite = GlobalKey<ScaffoldState>();
     return SafeArea(
       child: Scaffold(
         backgroundColor: ColorManager.backGround,
-        key: scaffoldKey,
+        key: scaffoldKeyFavourite,
         resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          elevation: 1,
-          leading: IconButton(
-              onPressed: () {
-                if (scaffoldKey.currentState!.isDrawerOpen) {
-                  scaffoldKey.currentState!.closeDrawer();
-                  //close drawer, if drawer is open
-                } else {
-                  scaffoldKey.currentState!.openDrawer();
-                  //open drawer, if drawer is closed
-                }
-              },
-              icon: Icon(
-                Icons.menu,
-                color: ColorManager.black,
-              )),
-          title: Text(
-            'المفضلة',
-            style: getBoldStyle(color: ColorManager.black),
-          ),
-          centerTitle: true,
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset(IconAssets.cart),
-            ),
-          ],
+        appBar: AppBarWidget(
+          function: () {
+            scaffoldKeyFavourite.currentState?.openDrawer();
+          }, title: 'Fav'.tr(),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -98,7 +77,7 @@ class FavouriteScreen extends StatelessWidget {
           ),
         ),
         drawer: DrawarWidget(
-            function: () => scaffoldKey.currentState?.closeDrawer()),
+            function: () => scaffoldKeyFavourite.currentState?.closeDrawer()),
       ),
     );
   }

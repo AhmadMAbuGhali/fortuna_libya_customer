@@ -9,6 +9,7 @@ import 'package:fortuna_libya_customer/ui/screens/order/order_details_item.dart'
 import '../../../navigator/router_class.dart';
 import '../../../resources/assets_manager.dart';
 import '../../../resources/color_manager.dart';
+import '../../general_component/appbar_custom_widget.dart';
 
 
 class OrderDetails extends StatelessWidget {
@@ -16,39 +17,16 @@ class OrderDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scaffoldKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKeyOrderDetails = GlobalKey<ScaffoldState>();
     return SafeArea(
         child: Scaffold(
           backgroundColor: ColorManager.white,
-          key: scaffoldKey,
+          key: scaffoldKeyOrderDetails,
           resizeToAvoidBottomInset: false,
-          appBar: AppBar(
-            elevation: 1,
-            leading: IconButton(
-                onPressed: () {
-                  if (scaffoldKey.currentState!.isDrawerOpen) {
-                    scaffoldKey.currentState!.closeDrawer();
-                    //close drawer, if drawer is open
-                  } else {
-                    scaffoldKey.currentState!.openDrawer();
-                    //open drawer, if drawer is closed
-                  }
-                },
-                icon: Icon(
-                  Icons.menu,
-                  color: ColorManager.black,
-                )),
-            title: Text(
-              'تفاصيل الطلبية ',
-              style: getBoldStyle(color: ColorManager.black),
-            ),
-            centerTitle: true,
-            actions: [
-              IconButton(
-                onPressed: () {},
-                icon: SvgPicture.asset(IconAssets.cart),
-              ),
-            ],
+          appBar:AppBarWidget(
+            function: () {
+              scaffoldKeyOrderDetails.currentState?.openDrawer();
+            }, title: 'orderDetails'.tr(),
           ),
           body: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -91,7 +69,7 @@ class OrderDetails extends StatelessWidget {
             ),
           ),
           drawer: DrawarWidget(
-              function: () => scaffoldKey.currentState?.closeDrawer()),
+              function: () => scaffoldKeyOrderDetails.currentState?.closeDrawer()),
         ));
   }
 }

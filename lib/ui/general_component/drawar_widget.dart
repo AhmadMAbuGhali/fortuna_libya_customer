@@ -234,21 +234,28 @@ class DrawarWidget extends StatelessWidget  {
                       //   height: 12.h,
                       // ),
                       //notification
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.notifications,
-                            color: Colors.black,
-                          ),
-                          SizedBox(
-                            width: 30.w,
-                          ),
-                          Text(
-                            "notifications",
-                            style: getBoldStyle(
-                                color: ColorManager.black, fontSize: 18),
-                          ).tr(),
-                        ],
+                      GestureDetector(
+                        onTap: (){
+                          function();
+                          RouterClass.routerClass
+                              .navigateTo(NavegatorConstant.notificationScreen);
+                        },
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.notifications,
+                              color: Colors.black,
+                            ),
+                            SizedBox(
+                              width: 30.w,
+                            ),
+                            Text(
+                              "notifications",
+                              style: getBoldStyle(
+                                  color: ColorManager.black, fontSize: 18),
+                            ).tr(),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 12.h,

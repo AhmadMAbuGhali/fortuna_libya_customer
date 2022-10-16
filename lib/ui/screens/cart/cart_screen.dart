@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,6 +9,7 @@ import '../../../navigator/router_class.dart';
 import '../../../resources/assets_manager.dart';
 import '../../../resources/color_manager.dart';
 
+import '../../general_component/appbar_custom_widget.dart';
 import 'cart_item.dart';
 
 class CartScreen extends StatelessWidget {
@@ -15,39 +17,16 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scaffoldKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKeyCart = GlobalKey<ScaffoldState>();
     return SafeArea(
         child: Scaffold(
       backgroundColor: ColorManager.white,
-      key: scaffoldKey,
+      key: scaffoldKeyCart,
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        elevation: 1,
-        leading: IconButton(
-            onPressed: () {
-              if (scaffoldKey.currentState!.isDrawerOpen) {
-                scaffoldKey.currentState!.closeDrawer();
-                //close drawer, if drawer is open
-              } else {
-                scaffoldKey.currentState!.openDrawer();
-                //open drawer, if drawer is closed
-              }
-            },
-            icon: Icon(
-              Icons.menu,
-              color: ColorManager.black,
-            )),
-        title: Text(
-          'السلة ',
-          style: getBoldStyle(color: ColorManager.black),
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(IconAssets.cart),
-          ),
-        ],
+      appBar: AppBarWidget(
+        function: () {
+          scaffoldKeyCart.currentState?.openDrawer();
+        }, title: 'cart'.tr(),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -90,7 +69,7 @@ class CartScreen extends StatelessWidget {
         ),
       ),
           drawer: DrawarWidget(
-              function: () => scaffoldKey.currentState?.closeDrawer()),
+              function: () => scaffoldKeyCart.currentState?.closeDrawer()),
     ));
   }
 }

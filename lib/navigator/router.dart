@@ -12,6 +12,7 @@ import 'package:fortuna_libya_customer/ui/screens/auth_screens/splash_screen.dar
 import 'package:fortuna_libya_customer/ui/screens/cart/cart_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/favourite/favourite_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/limit_offer/limited_offer.dart';
+import 'package:fortuna_libya_customer/ui/screens/notification/notification_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/order/order_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/point/point_screen.dart';
 import 'package:fortuna_libya_customer/ui/screens/product/product_details.dart';
@@ -136,6 +137,13 @@ class RouterX {
           builder: (_) => ChangeNotifierProvider(
             create: (context) => AuthProvider(),
             child: const SupportScreen(),
+          ),
+        );
+      case NavegatorConstant.notificationScreen:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+            child:  NotificationScreen(),
           ),
         );
 

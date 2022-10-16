@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,6 +7,7 @@ import 'package:fortuna_libya_customer/resources/styles_manager.dart';
 import 'package:fortuna_libya_customer/ui/general_component/drawar_widget.dart';
 
 import '../../../resources/assets_manager.dart';
+import '../../general_component/appbar_custom_widget.dart';
 
 
 
@@ -14,39 +16,16 @@ class SupportScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final scaffoldKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKeySupport = GlobalKey<ScaffoldState>();
     return SafeArea(
         child: Scaffold(
       backgroundColor: ColorManager.backGround,
-      key: scaffoldKey,
+      key: scaffoldKeySupport,
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        elevation: 1,
-        leading: IconButton(
-            onPressed: () {
-              if (scaffoldKey.currentState!.isDrawerOpen) {
-                scaffoldKey.currentState!.closeDrawer();
-                //close drawer, if drawer is open
-              } else {
-                scaffoldKey.currentState!.openDrawer();
-                //open drawer, if drawer is closed
-              }
-            },
-            icon: Icon(
-              Icons.menu,
-              color: ColorManager.black,
-            )),
-        title: Text(
-          'الدعم الفني ',
-          style: getBoldStyle(color: ColorManager.black),
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(IconAssets.cart),
-          ),
-        ],
+      appBar: AppBarWidget(
+        function: () {
+          scaffoldKeySupport.currentState?.openDrawer();
+        }, title: 'support'.tr(),
       ),
       body: Column(
         children: [
@@ -85,7 +64,7 @@ Image.asset(ImageAssets.logo,height: 120,width: 120,),
         ],
       ),
           drawer: DrawarWidget(
-              function: () => scaffoldKey.currentState?.closeDrawer()),
+              function: () => scaffoldKeySupport.currentState?.closeDrawer()),
     ));
   }
 }

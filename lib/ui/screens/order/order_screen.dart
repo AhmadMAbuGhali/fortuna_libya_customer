@@ -13,6 +13,8 @@ import 'package:fortuna_libya_customer/ui/screens/order/acrive_order.dart';
 import 'package:fortuna_libya_customer/ui/screens/order/history_order.dart';
 import 'package:fortuna_libya_customer/ui/screens/profile/profile_screen.dart';
 
+import '../../general_component/appbar_custom_widget.dart';
+
 class OrderScreen extends StatefulWidget {
   @override
   State<OrderScreen> createState() => _OrderScreenState();
@@ -24,7 +26,7 @@ class _OrderScreenState extends State<OrderScreen>
 
   TabController? tabController;
   List<Color>? tabBackground;
-  final scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> scaffoldKeyOrder = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -54,35 +56,12 @@ class _OrderScreenState extends State<OrderScreen>
     return SafeArea(
       child: Scaffold(
         backgroundColor: ColorManager.backGround,
-        key: scaffoldKey,
+        key: scaffoldKeyOrder,
         resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          elevation: 1,
-          leading: IconButton(
-              onPressed: () {
-                if (scaffoldKey.currentState!.isDrawerOpen) {
-                  scaffoldKey.currentState!.closeDrawer();
-                  //close drawer, if drawer is open
-                } else {
-                  scaffoldKey.currentState!.openDrawer();
-                  //open drawer, if drawer is closed
-                }
-              },
-              icon: Icon(
-                Icons.menu,
-                color: ColorManager.black,
-              )),
-          title: Text(
-            'الطلبات',
-            style: getBoldStyle(color: ColorManager.black),
-          ),
-          centerTitle: true,
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset(IconAssets.cart),
-            ),
-          ],
+        appBar: AppBarWidget(
+          function: () {
+            scaffoldKeyOrder.currentState?.openDrawer();
+          }, title: 'order'.tr(),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -176,7 +155,7 @@ class _OrderScreenState extends State<OrderScreen>
           ),
         ),
         drawer: DrawarWidget(
-            function: () => scaffoldKey.currentState?.closeDrawer()),
+            function: () => scaffoldKeyOrder.currentState?.closeDrawer()),
       ),
     );
   }
