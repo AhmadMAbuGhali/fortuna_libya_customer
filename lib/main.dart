@@ -1,3 +1,4 @@
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,6 +21,7 @@ initSp() async {
 void main() async{
   await ScreenUtil.ensureScreenSize();
   WidgetsFlutterBinding.ensureInitialized();
+
   initSp();
   runApp( EasyLocalization(
     supportedLocales: const [
@@ -47,8 +49,9 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
-            locale:context.locale,
-            // locale: Locale("ar", "PS") ,
+
+            //locale:context.locale,
+            locale: Locale("ar", "SA") ,
             scaffoldMessengerKey:RouterClass.routerClass.rootScaffoldMessengerKey ,
             navigatorKey: RouterClass.routerClass.navKey,
             theme:getApplicationTheme(),

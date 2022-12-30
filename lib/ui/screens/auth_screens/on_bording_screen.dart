@@ -76,7 +76,7 @@ class _IntroPageState extends State<OnBoardingScreen> {
                             child: Image.asset( data[_activeIndex].path),
                           ),
                           SizedBox(
-                            height: 26.h,
+                            height: 5.h,
                           ),
                           Text(
                             data[_activeIndex].title,
